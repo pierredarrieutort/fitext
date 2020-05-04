@@ -1,0 +1,186 @@
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap";
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    background: #f5f5f5;
+    height: 100vh;
+    overflow: scroll;
+}
+
+body #manipulation {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+    padding: 15px 20px 0;
+    border: solid 1px #ccc;
+    border-top: unset;
+    user-select: none;
+}
+
+body #manipulation fieldset:not(:last-chid) {
+    display: flex;
+    flex-direction: column;
+}
+
+body #manipulation fieldset:last-child {
+    border: none;
+    margin-top: 5px;
+}
+
+body #manipulation fieldset:last-child label {
+    cursor: pointer;
+}
+
+body #manipulation fieldset:last-child label:first-of-type {
+    padding-right: 10px;
+}
+
+body #manipulation fieldset:last-child label:last-of-type {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    transition: background-color 0.3s 0.15s ease-out;
+}
+
+body #manipulation fieldset:last-child label:last-of-type::after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 30px;
+    background-color: #666;
+    transition: transform 0.3s, background-color 0.3s;
+    top: -2.75px;
+    transform: translateX(-15px);
+}
+
+body #manipulation fieldset:last-child input {
+    position: absolute;
+    display: none;
+}
+
+body #manipulation fieldset:last-child input:checked+label {
+    background-color: rgba(4, 107, 155, 0.3);
+}
+
+body #manipulation fieldset:last-child input:checked+label::after {
+    transform: translateX(0);
+    background-color: #046b9b;
+}
+
+body #manipulation fieldset>div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+body #manipulation fieldset input {
+    background: none;
+    border: none;
+    margin: 2.5px 10px;
+    cursor: pointer;
+}
+
+body #manipulation fieldset input:not(:last-child) {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 10rem;
+    height: 0.25rem;
+    outline: none;
+    border-radius: 0.25rem;
+    background: #ccc;
+}
+
+body #manipulation fieldset input:not(:last-child)::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    background-color: #046b9b;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+body #manipulation fieldset label {
+    font-size: 14px;
+    color: #535353;
+}
+
+body #manipulation fieldset button {
+    margin-top: 10px;
+    background: #046b9b;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 25px;
+    color: #fff;
+    cursor: pointer;
+}
+
+body main {
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+body main .fit-this-text {
+    width: 60%;
+    height: 80%;
+    background: #333;
+    color: #fff;
+    padding: 3.5vw;
+    border-radius: 10px;
+}
+
+body main .fit-this-text h1,
+body main .fit-this-text h2 {
+    text-align: center;
+}
+
+body main .fit-this-text p {
+    line-height: 1.4;
+}
+
+body .github-ribbon {
+    position: fixed;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    z-index: 99999;
+    right: 0px;
+    top: 0px;
+    pointer-events: none;
+}
+
+body .github-ribbon a {
+    display: inline-block;
+    width: 200px;
+    overflow: hidden;
+    padding: 6px 0px;
+    text-align: center;
+    transform: rotate(45deg);
+    text-decoration: none;
+    color: white;
+    position: inherit;
+    font-size: 14px;
+    background-color: #046b9b;
+    right: -40px;
+    top: 45px;
+    pointer-events: all;
+}
