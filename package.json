@@ -1,6 +1,6 @@
 {
   "name": "fitext",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Resizes text elements proportionally to fit any element",
   "main": "lib/fitext.js",
   "scripts": {

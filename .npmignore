@@ -1,0 +1,11 @@
+src/app.js
+src/index.html
+src/style.scss
+package-lock.json
+node_modules
+dist
+.DS_Store
+.gitignore
+webpack.config.js
+fitext_logo.svg
+img
