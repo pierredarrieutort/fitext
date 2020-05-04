@@ -32,7 +32,7 @@ $ yarn add fitext
 
 ES6 Modules :
 ```js
-import fit from 'fitext';
+import { fitext } from 'fitext/lib/fitext.min'
 
 const fittables = document.getElementsByClassName('fit-this-text');
 fit(fittables, true);
