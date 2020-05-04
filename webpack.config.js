@@ -1,9 +1,8 @@
-const
-    dev = Boolean( process.env.WEBPACK_DEV_SERVER ),
-    path = require( 'path' ),
-    HtmlWebpackPlugin = require( 'html-webpack-plugin' ),
-    MiniCssExtractPlugin = require( 'mini-css-extract-plugin' ),
-    { CleanWebpackPlugin } = require( 'clean-webpack-plugin' )
+const dev = Boolean(process.env.WEBPACK_DEV_SERVER)
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 
 module.exports = {
     stats: {
@@ -11,12 +10,12 @@ module.exports = {
     },
     entry: './src/app.js',
     output: {
-        path: path.resolve( 'dist' )
+        path: path.resolve('dist')
     },
     watch: dev,
     devtool: dev ? 'inline-source-map' : false,
     devServer: {
-        contentBase: path.resolve( 'dist' ),
+        contentBase: path.resolve('dist'),
         https: true,
         compress: true,
         open: true,
@@ -50,9 +49,9 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin( {
+        new HtmlWebpackPlugin({
             template: './src/index.html'
-        } ),
+        }),
         new MiniCssExtractPlugin()
     ]
 }
