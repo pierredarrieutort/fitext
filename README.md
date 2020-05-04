@@ -35,6 +35,7 @@ ES6 Modules:
 import fit from 'fitext';
 
 const fittables = document.getElementsByClassName('fit-this-text');
+
 fit(fittables, true);
 ```
 
