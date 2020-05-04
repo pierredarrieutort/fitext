@@ -7,5 +7,6 @@ dist
 .DS_Store
 .gitignore
 webpack.config.js
+webpack.config.prod.js
 fitext_logo.svg
 img
