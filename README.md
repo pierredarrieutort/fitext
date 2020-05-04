@@ -30,7 +30,7 @@ $ yarn add fitext
 
 ## Getting Started
 
-ES6 Modules :
+ES6 Modules:
 ```js
 import fit from 'fitext';
 
@@ -38,7 +38,7 @@ const fittables = document.getElementsByClassName('fit-this-text');
 fit(fittables, true);
 ```
 
-No-module :
+No-module:
 ```html
 <script src='lib/fitext.min.js' defer></script>
 <script>
@@ -67,24 +67,24 @@ In the previous example, we listen to all events that can make texts overflow th
 
 ## Using a CDN
 
-- Minified version : `https://cdn.jsdelivr.net/npm/fitext@latest/lib/fitext.min.js`
-- Original version : `https://cdn.jsdelivr.net/npm/fitext@latest/src/fitext.js`
+- Minified version: `https://cdn.jsdelivr.net/npm/fitext@latest/lib/fitext.min.js`
+- Original version: `https://cdn.jsdelivr.net/npm/fitext@latest/src/fitext.js`
 - For specific files or enhanced configration you can go [here](https://www.jsdelivr.com/package/npm/fitext).
 
 
 ## Options
 
-You can pass options in `fitext`. Allowed values are as follows :
+You can pass options in `fitext`. Allowed values are as follows:
 
 |Name|Type|Default|Description|
 |:--:|:--:|:-----:|:----------|
 |**`fittables`**|`{ Array }`|`[]`|Lists all `fittables` elements. [More](#fittables)|
 |**`wideable`**|`{ Boolean }`|`false`|Enables the font-size enlarger. [More](#wideable)|
 
-- ### `fittables` :
+- ### `fittables`
     This option can accept arrays or nodes/HTML collection or anything else that can be destructured following an array pattern. If you want to use a `document.querySelector('element')` pass it as an array like this `[document.querySelector('element')]`.
 
-- ### `wideable` :
+- ### `wideable`
     This option enlarges the font size above the font size established before executing the `fit` function.
     The default behavior of this options limits the font-size to the font-size established before the function execution.
 
