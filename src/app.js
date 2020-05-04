@@ -1,20 +1,16 @@
-import './style.scss'
+import './styles.scss'
 
 import fit from './fitext'
 
 
-['DOMContentLoaded', 'resize'].forEach( event => window.addEventListener( event, adjustHeight ) )
+['DOMContentLoaded', 'resize'].forEach(event => window.addEventListener(event, adjustHeight))
 
 function adjustHeight() {
-    const
-        ELEMENTS = document.getElementsByClassName( 'fit-this-text' ),
-        IS_WIDEABLE = true
+    const ELEMENTS = document.getElementsByClassName('fit-this-text')
+    const IS_WIDEABLE = true
 
-    fit( ELEMENTS, IS_WIDEABLE )
+    fit(ELEMENTS, IS_WIDEABLE)
 }
-
-
-
 
 
 //** FOLLOWING CODE IS DEDICATED TO THE DEMO **//
@@ -41,12 +37,12 @@ function demo() {
 
     function handleWidth() {
         WIDTH_OUTPUT.value = HANDLEABLE.style.width = `${this.value}%`
-        fit( [HANDLEABLE], WIDEABLE.checked )
+        fit([HANDLEABLE], WIDEABLE.checked)
     }
 
     function handleHeight() {
         HEIGHT_OUTPUT.value = HANDLEABLE.style.height = `${this.value}%`
-        fit( [HANDLEABLE], WIDEABLE.checked )
+        fit([HANDLEABLE], WIDEABLE.checked)
     }
 
     function reset() {
@@ -54,10 +50,10 @@ function demo() {
         HEIGHT_OUTPUT.value = HANDLEABLE.style.height = `${INITIAL_VALUES[1]}%`
         WIDTH.value = INITIAL_VALUES[0]
         HEIGHT.value = INITIAL_VALUES[1]
-        fit( [HANDLEABLE], WIDEABLE.checked )
+        fit([HANDLEABLE], WIDEABLE.checked)
     }
 
     function handleWideable() {
-        fit( [HANDLEABLE], WIDEABLE.checked )
+        fit([HANDLEABLE], WIDEABLE.checked)
     }
 }
