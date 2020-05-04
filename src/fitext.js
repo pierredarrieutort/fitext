@@ -14,7 +14,14 @@ export default function fit( fittables, wideable ) {
 
         const core = () => {
             const
-                OVERFLOWING = () => FITTER.offsetHeight > parseFloat( getComputedStyle( box ).height ),
+                OVERFLOWING = () => {
+                    const
+                        BOX_PADDING_TOP = parseFloat( getComputedStyle( box ).paddingTop ),
+                        BOX_PADDING_BOTTOM = parseFloat( getComputedStyle( box ).paddingBottom ),
+                        NORMALIZED_BOX_HEIGHT = box.offsetHeight - ( BOX_PADDING_TOP + BOX_PADDING_BOTTOM )
+
+                    return FITTER.offsetHeight > NORMALIZED_BOX_HEIGHT
+                },
                 UPDATE_FONT_SIZE = ( child, multiplier ) => child.style.fontSize = `${parseFloat( getComputedStyle( child ).fontSize ) * multiplier}px`
 
 
