@@ -22,10 +22,32 @@ main {
   overflow: hidden;
 }
 
+
+// Preview
+
 .preview {
   padding: 4rem;
   overflow: auto;
 }
+
+.fitter-container {
+  padding: 5rem;
+  border: 1px dotted #000;
+}
+
+h1, h2 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+  letter-spacing: -.025em;
+}
+
+p {
+  //white-space: pre-wrap;
+  margin-bottom: 0;
+}
+
+
+// Controls
 
 input[type=range] {
   width: 100%;

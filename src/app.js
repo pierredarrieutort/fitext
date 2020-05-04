@@ -2,20 +2,17 @@ import './styles.scss'
 
 import fit from './fitext'
 
+window.addEventListener('DOMContentLoaded', () => {
+    // const fittableElements = document.getElementsByClassName('fitter-container')
+    // const wideable = true
 
-['DOMContentLoaded', 'resize'].forEach(event => window.addEventListener(event, adjustHeight))
+    // fit(fittableElements, wideable)
 
-function adjustHeight() {
-    const ELEMENTS = document.getElementsByClassName('fit-this-text')
-    const IS_WIDEABLE = true
-
-    fit(ELEMENTS, IS_WIDEABLE)
-}
+    demo()
+})
 
 
 //** FOLLOWING CODE IS DEDICATED TO THE DEMO **//
-
-window.addEventListener('DOMContentLoaded', demo)
 
 function demo() {
     const widthInput = document.querySelector('#widthInput')
@@ -26,10 +23,7 @@ function demo() {
     const wideableCheckbox = document.querySelector('#wideableCheckbox')
 
     const initialSize = [widthInput.value, heightInput.value]
-    const fitterContainer = document.querySelector('.fit-this-text')
-
-    fitterContainer.style.width = `${widthInput.value}%`
-    fitterContainer.style.height = `${heightInput.value}%`
+    const fitterContainer = document.querySelector('.fitter-container')
 
     function handleWidth({ target }) {
         widthOutput.value = target.value
@@ -50,8 +44,8 @@ function demo() {
         widthOutput.value = initialSize[0]
         heightOutput.value = initialSize[1]
 
-        fitterContainer.style.width = initialSize[0]
-        fitterContainer.style.height = initialSize[1]
+        fitterContainer.style.width = `${initialSize[0]}%`
+        fitterContainer.style.height = `${initialSize[1]}%`
 
         fit([fitterContainer], wideableCheckbox.checked)
     }
@@ -64,4 +58,10 @@ function demo() {
     heightInput.oninput = handleHeight
     resetButton.onclick = reset
     wideableCheckbox.onchange = handleWideable
+
+    // Init
+
+    fitterContainer.style.width = `${widthInput.value}%`
+    fitterContainer.style.height = `${heightInput.value}%`
+    fit([fitterContainer], wideableCheckbox.checked)
 }

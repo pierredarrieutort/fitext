@@ -1,6 +1,5 @@
 export default function fit(fittables, wideable) {
     [...fittables].forEach(box => {
-
         const WRAPPER_CLASSNAME = 'fitter'
 
         if (!RegExp(WRAPPER_CLASSNAME).test(box.firstElementChild.className)) {
@@ -13,7 +12,10 @@ export default function fit(fittables, wideable) {
         fitter.style.display = 'inline-block'
 
         const core = () => {
-            const overflowing = () => fitter.offsetHeight > parseFloat(getComputedStyle(box).height)
+            const overflowing = () => {
+                return fitter.offsetHeight > parseFloat(getComputedStyle(box).height)
+            }
+
             const updateFontSize = (child, multiplier) => child.style.fontSize = `${parseFloat(getComputedStyle(child).fontSize) * multiplier}px`
 
             children.forEach(child => {
