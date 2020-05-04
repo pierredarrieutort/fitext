@@ -1,8 +1,8 @@
 {
   "name": "fitext",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Resizes text elements proportionally to fit any element",
-  "main": "lib/fitext.js",
+  "main": "lib/fitext.min.js",
   "scripts": {
     "dev": "npx webpack-dev-server",
     "build": "npx webpack --config webpack.config.prod.js",

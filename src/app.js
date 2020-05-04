@@ -10,10 +10,8 @@ function adjustHeight() {
         ELEMENTS = document.getElementsByClassName( 'fit-this-text' ),
         IS_WIDEABLE = true
 
-    fit( ELEMENTS, IS_WIDEABLE )
+    fitext( ELEMENTS, IS_WIDEABLE )
 }
-
-
 
 
 
@@ -41,12 +39,12 @@ function demo() {
 
     function handleWidth() {
         WIDTH_OUTPUT.value = HANDLEABLE.style.width = `${this.value}%`
-        fitext[HANDLEABLE], WIDEABLE.checked )
+        fitext( [HANDLEABLE], WIDEABLE.checked )
     }
 
     function handleHeight() {
         HEIGHT_OUTPUT.value = HANDLEABLE.style.height = `${this.value}%`
-        fifitext( [HANDLEABLE], WIDEABLE.checked )
+        fitext( [HANDLEABLE], WIDEABLE.checked )
     }
 
     function reset() {
@@ -54,10 +52,10 @@ function demo() {
         HEIGHT_OUTPUT.value = HANDLEABLE.style.height = `${INITIAL_VALUES[1]}%`
         WIDTH.value = INITIAL_VALUES[0]
         HEIGHT.value = INITIAL_VALUES[1]
-        fitext[HANDLEABLE], WIDEABLE.checked )
+        fitext( [HANDLEABLE], WIDEABLE.checked )
     }
 
     function handleWideable() {
-        fitext[HANDLEABLE], WIDEABLE.checked )
+        fitext( [HANDLEABLE], WIDEABLE.checked )
     }
 }

@@ -1,4 +1,4 @@
-export default function fit( fittables, wideable ) {
+export default function fitext( fittables, wideable ) {
     [...fittables].forEach( box => {
 
         const WRAPPER_CLASSNAME = 'fitter'

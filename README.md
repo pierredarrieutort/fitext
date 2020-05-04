@@ -1,7 +1,6 @@
 <h1 align="center">fitext</h1>
 
 Fitext is a module which adapts the textual elements so that they are always contained in their parents without ever exceeding whatever the parent height and width. This [lightweight](#performance-tips) library using no-one dependency. **You can find a playable demo [here](https://pierredarrieutort.github.io/fitext/).**
-___
 
 <div align="center">
     <img src="./src/img/fitext_logo.jpg" alt="Logo fitext">
@@ -32,7 +31,7 @@ $ yarn add fitext
 
 ES6 Modules :
 ```js
-import fitext from 'fitext/lib/fitext.min'
+import fitext from 'fitext'
 
 const fittables = document.getElementsByClassName('fit-this-text');
 fitext(fittables, true);
@@ -51,7 +50,7 @@ No-module :
 ## Example
 
 ```js
-import fitext from 'fitext/lib/fitext.min'
+import fitext from 'fitext'
 
 
 ['DOMContentLoaded', 'resize'].forEach( e => window.addEventListener( e, adjustHeight ) )
@@ -101,9 +100,9 @@ The support is checked on [this range of browsers](https://browserl.ist/?q=defau
 
 Type|Value|Why this weight ?
 :----:|:-----:|---
-**Original**|<span style="color:lightseagreen">1.81</span> <sup>kB</sup>| As developed, without any browser support and not as a module. [It's here](src/fitext.js, "Get the file").
-**Minified**|<span style="color:mediumseagreen">2.79</span> <sup>kB</sup>| With all [Browser Support](#browser-suport), as a module and of course minified !
-**Gzipped**|<span style="color:green">1.20</span> <sup>kB</sup>| Same as the minified version but you support gzip 🎉 !
+**Original**|<span style="color:lightseagreen">2.16</span> <sup>kB</sup>| As developed, without any browser support and not as a module. [It's here](src/fitext.js, "Get the file").
+**Minified**|<span style="color:mediumseagreen">2.83</span> <sup>kB</sup>| With all [Browser Support](#browser-suport), as a module and of course minified !
+**Gzipped**|<span style="color:green">1.23</span> <sup>kB</sup>| Same as the minified version but you support gzip 🎉 !
 
 - Try to use relative font-size wherever possible.
 - If you targeting a parent element all child are already taken in account, don't execute a `fitext` function on them.
