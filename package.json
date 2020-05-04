@@ -4,8 +4,8 @@
   "description": "Resizes text elements proportionally to fit any element",
   "main": "lib/fitext.js",
   "scripts": {
-    "dev": "npx webpack-dev-server",
-    "build": "npx webpack --config webpack.config.prod.js",
+    "dev": "webpack-dev-server",
+    "build": "webpack --config webpack.config.prod.js",
     "postbuild": "echo Gzip file size : && npx gzip-size lib/fitext.min.js"
   },
   "browserslist": [
