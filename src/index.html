@@ -13,7 +13,7 @@
 
 <body>
 <main>
-    <div>
+    <div class="preview">
         <div class="fit-this-text">
             <h1>Resize your window</h1>
             <h2>Play with responsive 💡</h2>
@@ -43,30 +43,33 @@
         </div>
     </div>
 
-    <section class="controls">
+    <aside class="controls">
         <fieldset>
             <legend>Container</legend>
 
             <label>
                 <span>Width:</span>
                 <input type="range" name="width" id="width" min="10" max="100" value="60">
-                <output id="widthVal" name="widthVal" for="width">60%</output>
+                <output id="widthVal" name="widthVal" for="width">60</output>
+                <span class="unit">%</span>
             </label>
 
             <label>
                 <span>Height:</span>
                 <input type="range" name="height" id="height" min="10" max="85" value="80">
-                <output id="heightVal" name="heightVal" for="height">80%</output>
+                <output id="heightVal" name="heightVal" for="height">80</output>
+                <span class="unit">%</span>
             </label>
             <button id="reset">Reset</button>
         </fieldset>
 
         <fieldset>
-            <label for="wideable">Make font-size enlargeable</label>
-            <input type="checkbox" name="wideable" id="wideable" checked>
-            <label for="wideable"></label>
+            <label>
+                <input type="checkbox" name="wideable" id="wideable" checked>
+                <span>Enlarge font</span>
+            </label>
         </fieldset>
-    </section>
+    </aside>
 </main>
 
 <div class="github-ribbon">
