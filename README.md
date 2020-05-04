@@ -69,11 +69,9 @@ In the previous example, we listen to all event that can makes overflow texts fr
 
 ## Using a CDN
 
-- Via NPM :
-    _soon._<!-- https://cdn.jsdelivr.net/npm/package@version/file -->
-
-- Via GitHub :
-    _soon._<!-- https://cdn.jsdelivr.net/gh/user/repo@version/file -->
+- Minified version : `https://cdn.jsdelivr.net/npm/fitext@latest/lib/fitext.min.js`
+- Original version : `https://cdn.jsdelivr.net/npm/fitext@latest/src/fitext.js`
+- For specific files or enhanced configration you can go [here](https://www.jsdelivr.com/package/npm/fitext).
 
 
 ## Options
