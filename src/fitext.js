@@ -13,7 +13,10 @@ export default function fit(fittables, wideable) {
 
         const core = () => {
             const overflowing = () => {
-                return fitter.offsetHeight > parseFloat(getComputedStyle(box).height)
+                const boxPaddingY = parseFloat(getComputedStyle(box).paddingTop) + parseFloat(getComputedStyle(box).paddingBottom)
+                const boxHeight = box.offsetHeight - boxPaddingY
+
+                return fitter.offsetHeight > boxHeight
             }
 
             const updateFontSize = (child, multiplier) => child.style.fontSize = `${parseFloat(getComputedStyle(child).fontSize) * multiplier}px`
@@ -26,12 +29,14 @@ export default function fit(fittables, wideable) {
 
             function check() {
                 if (overflowing()) {
-                    while (overflowing())
+                    while (overflowing()) {
                         children.forEach(child => updateFontSize(child, .99))
+                    }
                 } else {
                     if (wideable) {
-                        while (!overflowing())
+                        while (!overflowing()) {
                             children.forEach(child => updateFontSize(child, 1.01))
+                        }
                     } else {
                         children.forEach(child => parseFloat(child.style.fontSize) * 1.01 < child.dataset.size
                             ? updateFontSize(child, 1.01)

@@ -20,7 +20,8 @@ function demo() {
     const widthOutput = document.querySelector('#widthOutput')
     const heightOutput = document.querySelector('#heightOutput')
     const resetButton = document.querySelector('#resetButton')
-    const wideableCheckbox = document.querySelector('#wideableCheckbox')
+
+    const enlargeCheckbox = document.querySelector('#enlargeCheckbox')
 
     const initialSize = [widthInput.value, heightInput.value]
     const fitterContainer = document.querySelector('.fitter-container')
@@ -28,13 +29,13 @@ function demo() {
     function handleWidth({ target }) {
         widthOutput.value = target.value
         fitterContainer.style.width = `${target.value}%`
-        fit([fitterContainer], wideableCheckbox.checked)
+        fit([fitterContainer], enlargeCheckbox.checked)
     }
 
     function handleHeight({ target }) {
         heightOutput.value = target.value
         fitterContainer.style.height = `${target.value}%`
-        fit([fitterContainer], wideableCheckbox.checked)
+        fit([fitterContainer], enlargeCheckbox.checked)
     }
 
     function reset() {
@@ -47,21 +48,21 @@ function demo() {
         fitterContainer.style.width = `${initialSize[0]}%`
         fitterContainer.style.height = `${initialSize[1]}%`
 
-        fit([fitterContainer], wideableCheckbox.checked)
+        fit([fitterContainer], enlargeCheckbox.checked)
     }
 
     function handleWideable() {
-        fit([fitterContainer], wideableCheckbox.checked)
+        fit([fitterContainer], enlargeCheckbox.checked)
     }
 
     widthInput.oninput = handleWidth
     heightInput.oninput = handleHeight
     resetButton.onclick = reset
-    wideableCheckbox.onchange = handleWideable
+    enlargeCheckbox.onchange = handleWideable
 
     // Init
 
     fitterContainer.style.width = `${widthInput.value}%`
     fitterContainer.style.height = `${heightInput.value}%`
-    fit([fitterContainer], wideableCheckbox.checked)
+    fit([fitterContainer], enlargeCheckbox.checked)
 }
