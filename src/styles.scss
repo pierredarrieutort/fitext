@@ -19,6 +19,12 @@ body {
 main {
   flex-grow: 1;
   display: flex;
+  overflow: hidden;
+}
+
+.preview {
+  padding: 4rem;
+  overflow: auto;
 }
 
 input[type=range] {

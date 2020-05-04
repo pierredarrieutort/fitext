@@ -18,41 +18,50 @@ function adjustHeight() {
 window.addEventListener('DOMContentLoaded', demo)
 
 function demo() {
-    const
-        WIDTH = document.getElementById('width'),
-        HEIGHT = document.getElementById('height'),
-        HANDLEABLE = document.querySelector('.fit-this-text'),
-        RESET = document.getElementById('reset'),
-        INITIAL_VALUES = [WIDTH.value, HEIGHT.value],
-        WIDEABLE = document.getElementById('wideable'),
-        WIDTH_OUTPUT = document.getElementById('widthVal'),
-        HEIGHT_OUTPUT = document.getElementById('heightVal')
+    const widthInput = document.querySelector('#widthInput')
+    const heightInput = document.querySelector('#heightInput')
+    const widthOutput = document.querySelector('#widthOutput')
+    const heightOutput = document.querySelector('#heightOutput')
+    const resetButton = document.querySelector('#resetButton')
+    const wideableCheckbox = document.querySelector('#wideableCheckbox')
 
-    WIDTH.oninput = handleWidth
-    HEIGHT.oninput = handleHeight
-    RESET.onclick = reset
-    WIDEABLE.onchange = handleWideable
+    const initialSize = [widthInput.value, heightInput.value]
+    const fitterContainer = document.querySelector('.fit-this-text')
 
+    fitterContainer.style.width = `${widthInput.value}%`
+    fitterContainer.style.height = `${heightInput.value}%`
 
-    function handleWidth() {
-        WIDTH_OUTPUT.value = HANDLEABLE.style.width = this.value
-        fit([HANDLEABLE], WIDEABLE.checked)
+    function handleWidth({ target }) {
+        widthOutput.value = target.value
+        fitterContainer.style.width = `${target.value}%`
+        fit([fitterContainer], wideableCheckbox.checked)
     }
 
-    function handleHeight() {
-        HEIGHT_OUTPUT.value = HANDLEABLE.style.height = this.value
-        fit([HANDLEABLE], WIDEABLE.checked)
+    function handleHeight({ target }) {
+        heightOutput.value = target.value
+        fitterContainer.style.height = `${target.value}%`
+        fit([fitterContainer], wideableCheckbox.checked)
     }
 
     function reset() {
-        WIDTH_OUTPUT.value = HANDLEABLE.style.width = INITIAL_VALUES[0]
-        HEIGHT_OUTPUT.value = HANDLEABLE.style.height = INITIAL_VALUES[1]
-        WIDTH.value = INITIAL_VALUES[0]
-        HEIGHT.value = INITIAL_VALUES[1]
-        fit([HANDLEABLE], WIDEABLE.checked)
+        widthInput.value = initialSize[0]
+        heightInput.value = initialSize[1]
+
+        widthOutput.value = initialSize[0]
+        heightOutput.value = initialSize[1]
+
+        fitterContainer.style.width = initialSize[0]
+        fitterContainer.style.height = initialSize[1]
+
+        fit([fitterContainer], wideableCheckbox.checked)
     }
 
     function handleWideable() {
-        fit([HANDLEABLE], WIDEABLE.checked)
+        fit([fitterContainer], wideableCheckbox.checked)
     }
+
+    widthInput.oninput = handleWidth
+    heightInput.oninput = handleHeight
+    resetButton.onclick = reset
+    wideableCheckbox.onchange = handleWideable
 }

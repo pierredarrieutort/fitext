@@ -13,7 +13,7 @@ export default function fit(fittables, wideable) {
         fitter.style.display = 'inline-block'
 
         const core = () => {
-            const overflowing = () => fitter.clientHeight > parseFloat(getComputedStyle(box).height)
+            const overflowing = () => fitter.offsetHeight > parseFloat(getComputedStyle(box).height)
             const updateFontSize = (child, multiplier) => child.style.fontSize = `${parseFloat(getComputedStyle(child).fontSize) * multiplier}px`
 
             children.forEach(child => {
