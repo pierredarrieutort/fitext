@@ -57,9 +57,9 @@ import fit from 'fitext';
 
 function adjustHeight() {
     const elements = document.getElementsByClassName('fit-this-text');
-    const isWideable = true;
+    const wideable = true;
 
-    fit(elements, isWideable)
+    fit(elements, wideable)
 }
 ```
 
@@ -69,20 +69,20 @@ In the previous example, we listen to all events that can make texts overflow th
 
 - Minified version: `https://cdn.jsdelivr.net/npm/fitext@latest/lib/fitext.min.js`
 - Original version: `https://cdn.jsdelivr.net/npm/fitext@latest/src/fitext.js`
-- For specific files or enhanced configration you can go [here](https://www.jsdelivr.com/package/npm/fitext).
+- For specific files or enhanced configuration you can go [here](https://www.jsdelivr.com/package/npm/fitext).
 
 
 ## Options
 
 You can pass options in `fitext`. Allowed values are as follows:
 
-|Name|Type|Default|Description|
-|:--:|:--:|:-----:|:----------|
-|**`fittables`**|`{ Array }`|`[]`|Lists all `fittables` elements. [More](#fittables)|
-|**`wideable`**|`{ Boolean }`|`false`|Enables the font-size enlarger. [More](#wideable)|
+| Name             | Type      | Default | Description |
+| :--------------- | :-------- | :------ | :---------- |
+| **`fittables`**  | `Array`   | `[]`    | Lists all `fittables` elements. [More](#fittables)|
+| **`wideable`**   | `Boolean` | `false` | Enables the font-size enlarger. [More](#wideable)|
 
 - ### `fittables`
-    This option can accept arrays or nodes/HTML collection or anything else that can be destructured following an array pattern. If you want to use a `document.querySelector('element')` pass it as an array like this `[document.querySelector('element')]`.
+    This option can accept arrays or nodes/HTML collection or anything else that can be destructured following an array pattern. If you want to use a `document.querySelector('element')`, put it in an array like this: `[document.querySelector('element')]`.
 
 - ### `wideable`
     This option enlarges the font size above the font size established before executing the `fit` function.
