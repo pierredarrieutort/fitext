@@ -51,7 +51,7 @@ No-module :
 ## Example
 
 ```js
-import fit from 'fitext'
+import fitext from 'fitext/lib/fitext.min'
 
 
 ['DOMContentLoaded', 'resize'].forEach( e => window.addEventListener( e, adjustHeight ) )
@@ -61,11 +61,11 @@ function adjustHeight() {
         ELEMENTS = document.getElementsByClassName( 'fit-this-text' ),
         IS_WIDEABLE = true
 
-    fit( ELEMENTS, IS_WIDEABLE )
+    fitext( ELEMENTS, IS_WIDEABLE )
 }
 ```
 
-In the previous example, we listen to all event that can makes overflow texts from their containers, we prevent all break cases by executing the `fit` function.
+In the previous example, we listen to all event that can makes overflow texts from their containers, we prevent all break cases by executing the `fitext` function.
 
 ## Using a CDN
 
@@ -87,7 +87,7 @@ You can pass options in `fitext`. Allowed values are as follows :
     This option can accept arrays or nodes/HTML collection or anything else that can be destructured following an array pattern. If you want to use a `document.querySelector('element')` pass it as an array like this `[document.querySelector('element')]`.
 
 - ### `wideable` :
-    This option enlarges the font size above the font size established before executing the `fit` function.
+    This option enlarges the font size above the font size established before executing the `fitext` function.
     The default behavior of this options limits the font-size to the font-size established before the function execution.
 
 ## Browser Support
@@ -106,7 +106,7 @@ Type|Value|Why this weight ?
 **Gzipped**|<span style="color:green">1.20</span> <sup>kB</sup>| Same as the minified version but you support gzip 🎉 !
 
 - Try to use relative font-size wherever possible.
-- If you targeting a parent element all child are already taken in account, don't execute a `fit` function on them.
+- If you targeting a parent element all child are already taken in account, don't execute a `fitext` function on them.
 - Try to avoid get to much containers into the fittable elements.
 
 ## Contributors
