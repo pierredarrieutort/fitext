@@ -32,10 +32,10 @@ $ yarn add fitext
 
 ES6 Modules :
 ```js
-import { fitext } from 'fitext/lib/fitext.min'
+import fitext from 'fitext/lib/fitext.min'
 
 const fittables = document.getElementsByClassName('fit-this-text');
-fit(fittables, true);
+fitext(fittables, true);
 ```
 
 No-module :
@@ -43,8 +43,8 @@ No-module :
 <script src='lib/fitext.min.js' defer></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const fittables = document.getElementsByClassName('fit-this-text');
-        fit(fittables, true);
+        const fittables = document.querySelector('fit-this-text');
+        fitext([fittables], true);
     });
 </script>
 ```
