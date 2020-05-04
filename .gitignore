@@ -1,5 +1,6 @@
-package-lock.json
+.DS_Store
+.idea
 node_modules
 dist
-.DS_Store
+package-lock.json
 fitext_logo.svg
