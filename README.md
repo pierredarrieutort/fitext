@@ -51,21 +51,19 @@ No-module :
 ## Example
 
 ```js
-import fit from 'fitext'
+import fit from 'fitext';
 
-
-['DOMContentLoaded', 'resize'].forEach( e => window.addEventListener( e, adjustHeight ) )
+['DOMContentLoaded', 'resize'].forEach(e => window.addEventListener(e, adjustHeight));
 
 function adjustHeight() {
-    const
-        ELEMENTS = document.getElementsByClassName( 'fit-this-text' ),
-        IS_WIDEABLE = true
+    const elements = document.getElementsByClassName('fit-this-text');
+    const isWideable = true;
 
-    fit( ELEMENTS, IS_WIDEABLE )
+    fit(elements, isWideable)
 }
 ```
 
-In the previous example, we listen to all event that can makes overflow texts from their containers, we prevent all break cases by executing the `fit` function.
+In the previous example, we listen to all events that can make texts overflow their containers, we prevent all break cases by executing the `fit` function.
 
 ## Using a CDN
 
