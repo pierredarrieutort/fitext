@@ -1,6 +1,6 @@
 import './style.scss'
 
-import fit from './fitext'
+import fitext from './fitext'
 
 
 ['DOMContentLoaded', 'resize'].forEach( event => window.addEventListener( event, adjustHeight ) )
@@ -41,12 +41,12 @@ function demo() {
 
     function handleWidth() {
         WIDTH_OUTPUT.value = HANDLEABLE.style.width = `${this.value}%`
-        fit( [HANDLEABLE], WIDEABLE.checked )
+        fitext[HANDLEABLE], WIDEABLE.checked )
     }
 
     function handleHeight() {
         HEIGHT_OUTPUT.value = HANDLEABLE.style.height = `${this.value}%`
-        fit( [HANDLEABLE], WIDEABLE.checked )
+        fifitext( [HANDLEABLE], WIDEABLE.checked )
     }
 
     function reset() {
@@ -54,10 +54,10 @@ function demo() {
         HEIGHT_OUTPUT.value = HANDLEABLE.style.height = `${INITIAL_VALUES[1]}%`
         WIDTH.value = INITIAL_VALUES[0]
         HEIGHT.value = INITIAL_VALUES[1]
-        fit( [HANDLEABLE], WIDEABLE.checked )
+        fitext[HANDLEABLE], WIDEABLE.checked )
     }
 
     function handleWideable() {
-        fit( [HANDLEABLE], WIDEABLE.checked )
+        fitext[HANDLEABLE], WIDEABLE.checked )
     }
 }
