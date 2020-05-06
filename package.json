@@ -3,6 +3,7 @@
   "version": "1.0.4",
   "description": "Resizes text elements proportionally to fit any element",
   "main": "lib/fitext.min.js",
+  "types": "src/types.d.ts",
   "scripts": {
     "dev": "npx webpack-dev-server",
     "build": "npx webpack --config webpack.config.prod.js",
