@@ -8,6 +8,7 @@ node_modules
 dist
 .DS_Store
 .gitignore
+.github
 
 webpack.config.js
 webpack.config.prod.js
