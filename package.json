@@ -5,8 +5,8 @@
   "main": "lib/fitext.min.js",
   "types": "src/types.d.ts",
   "scripts": {
-    "dev": "webpack-dev-server",
-    "build": "webpack --config webpack.config.prod.js",
+    "dev": "npx webpack-dev-server",
+    "build": "npx webpack --config webpack.config.prod.js",
     "postbuild": "echo Gzip file size : && npx gzip-size lib/fitext.min.js"
   },
   "browserslist": [
