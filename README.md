@@ -1,6 +1,6 @@
 <h1 align="center">fitext</h1>
 
-Fitext is a module which adapts the textual elements so that they are always contained in their parents without ever exceeding whatever the parent height and width. This [lightweight](#performance-tips) library doesn't use any dependency. **[Play with the demo](https://pierredarrieutort.github.io/fitext/) to see what it's like!**
+Fitext is a module which adjusts text size in elements so that it never exceeds its container width and height. This [lightweight](#performance-tips) library doesn't use any dependency. **[Play with the demo](https://pierredarrieutort.github.io/fitext/) to see what it's like!**
 
 <div align="center">
     <img src="./src/img/fitext_logo.jpg" alt="Logo fitext">
