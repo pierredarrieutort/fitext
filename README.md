@@ -85,13 +85,11 @@ You can pass options to `fitext`. Allowed values are:
 | **`fittables`**  | `Array`   | `[]`    | Lists all `fittables` elements. [More](#fittables)|
 | **`wideable`**   | `Boolean` | `false` | Enables the font-size enlarger. [More](#wideable)|
 
-### `fittables`
+- `fittables`
+    This option can accept arrays or nodes/HTML collections or anything else that can be destructured following an array pattern. If you want to use `document.querySelector('element')`, put it in an array like this: `[document.querySelector('element')]`.
 
-This option can accept arrays or nodes/HTML collections or anything else that can be destructured following an array pattern. If you want to use `document.querySelector('element')`, put it in an array like this: `[document.querySelector('element')]`.
-
-### `wideable`
-
-This option makes the font-size enlarge if the container is big enough. This option is not enabled by default and limits the font-size to the value it is declared before the execution of the `fit` function.
+- `wideable`
+    This option makes the font-size enlarge if the container is big enough. This option is not enabled by default and limits the font-size to the value it is declared before the execution of the `fit` function.
 
 ## Browser Support
 
