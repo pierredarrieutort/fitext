@@ -12,7 +12,7 @@ Fitext is a module which adapts the textual elements so that they are always con
     1. [Installation](#installation)
     1. [Usage](#usage)
     1. [Using a CDN](#using-a-cdn)
-1. [Options](#options)
+1. [Parameters](#parameters)
 1. [Browser Support](#browser-suport)
 1. [Performance tips](#performance-tips)
 1. [Contributors](#contributors)
@@ -76,14 +76,14 @@ In the above example, we listen to all events that can make texts overflow their
 - For specific files or enhanced configuration you can go [here](https://www.jsdelivr.com/package/npm/fitext).
 
 
-## Options
+## Parameters
 
-You can pass options to `fitext`. Allowed values are:
+The `fitext` function accepts two parameters. Allowed values are:
 
-| Name             | Type      | Default | Description |
-| :--------------- | :-------- | :------ | :---------- |
-| **`fittables`**  | `Array`   | `[]`    | Lists all `fittables` elements. [More](#fittables)|
-| **`wideable`**   | `Boolean` | `false` | Enables the font-size enlarger. [More](#wideable)|
+| Name             | Required | Type      | Description | Default value |
+| :--------------- | :------- | :-------- | :---------- | :------------ |
+| **`fittables`**  | required | `Array`   | Lists all `fittables` elements. [More](#fittables) | `[]` |
+| **`wideable`**   | optional | `Boolean` | Enables the font-size enlarger. [More](#wideable) | `false` |
 
 - `fittables`
     This option can accept arrays or nodes/HTML collections or anything else that can be destructured following an array pattern. If you want to use `document.querySelector('element')`, put it in an array like this: `[document.querySelector('element')]`.
