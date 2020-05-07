@@ -217,26 +217,27 @@ input[type=checkbox] {
   position: fixed;
   top: 0;
   left: 0;
-  width: 150px;
-  height: 150px;
+  width: 14rem;
+  height: 14rem;
   overflow: hidden;
   z-index: 999;
   pointer-events: none;
 
   a {
-    position: inherit;
-    display: inline-block;
-    width: 200px;
-    overflow: hidden;
-    padding: 6px 0;
+    display: block;
+    position: absolute;
+    top: 2.90rem;
+    left: -2.90rem;
+    width: 14rem;
+    padding: .5rem 0;
+    font-size: .875rem;
+    font-weight: 600;
     text-align: center;
-    transform: rotate(-45deg);
     text-decoration: none;
-    font-size: 14px;
-    color: inherit;
-    background-color: lightblue;
-    left: -40px;
-    top: 45px;
+    color: #fff;
+    background-color: #4abf9f;
+    transform: rotate(-45deg);
+    overflow: hidden;
     pointer-events: all;
   }
 }
