@@ -7,7 +7,7 @@ export default function fitext(fittables, wideable) {
         }
 
         const fitter = box.firstElementChild
-        const children = [...box.getElementsByTagName('*')]
+        const children = [...box.querySelectorAll('*')]
 
         fitter.style.display = 'inline-block'
 

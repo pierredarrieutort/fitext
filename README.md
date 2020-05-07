@@ -60,7 +60,7 @@ import fitext from 'fitext';
 ['DOMContentLoaded', 'resize'].forEach(e => window.addEventListener(e, adjustHeight));
 
 function adjustHeight() {
-    const elements = document.getElementsByClassName('fit-this-text');
+    const elements = document.querySelectorAll('.fit-this-text');
     const wideable = true;
 
     fitext(elements, wideable);

@@ -3,7 +3,7 @@ import './styles.scss'
 import fitext from './fitext'
 
 window.addEventListener('DOMContentLoaded', () => {
-    // const fittableElements = document.getElementsByClassName('fitter-container')
+    // const fittableElements = document.querySelectorAll('.fitter-container')
     // const wideable = true
 
     // fitext(fittableElements, wideable)
