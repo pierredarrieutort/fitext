@@ -100,7 +100,7 @@ The support is checked on [this range of browsers](https://browserl.ist/?q=defau
 
 Type|Value|Why this weight ?
 :----:|:-----:|---
-**Original**|<span style="color:lightseagreen">1.81</span> <sup>kB</sup>| As developed, without any browser support and not as a module. [It's here](src/fitext.js, "Get the file").
+**Original**|<span style="color:lightseagreen">1.81</span> <sup>kB</sup>| As developed, without any browser support and not as a module. [It's here](src/fitext.js "Get the file").
 **Minified**|<span style="color:mediumseagreen">2.79</span> <sup>kB</sup>| With all [Browser Support](#browser-suport), as a module and of course minified !
 **Gzipped**|<span style="color:green">1.20</span> <sup>kB</sup>| Same as the minified version but you support gzip 🎉 !
 
