@@ -104,9 +104,9 @@ The support is checked on [this range of browsers](https://browserl.ist/?q=defau
 
 | Type         | Value | Why this weight ? |
 | :----------- |:----- | :---------------- |
-| **Original** | <span color="lightseagreen">1.81</span><sup>kB</sup>| As developed, without any browser support and not as a module. [It's here](src/fitext.js "Get the file"). |
-| **Minified** | <span style="color:mediumseagreen">2.79</span><sup>kB</sup>| With all [Browser Support](#browser-suport), as a module and of course minified! |
-| **Gzipped**  | <span style="color:green">1.20</span><sup>kB</sup>| Same as the minified version but you support gzip 🎉! |
+| **Original** | <span style="color: lightseagreen">1.81</span> kB | As developed, without any browser support and not as a module. [It's here](src/fitext.js "Get the file"). |
+| **Minified** | <span style="color: mediumseagreen">2.79</span> kB | With all [Browser Support](#browser-suport), as a module and of course minified! |
+| **Gzipped**  | <span style="color: green">1.20</span> kB | Same as the minified version but you support gzip 🎉! |
 
 - Try to use relative font-size wherever possible.
 - If you targeting a parent element all child are already taken in account, don't execute a `fit` function on them.
