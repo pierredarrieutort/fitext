@@ -2,12 +2,14 @@
   "name": "fitext",
   "version": "1.0.5.c",
   "description": "Resizes text elements proportionally to fit any element",
-  "main": "lib/fitext.min.js",
+  "main": "dist/fitext.cjs.js",
+  "module": "dist/fitext.esm.js",
+  "browser": "dist/fitext.umd.js",
+  "source": "src/fitext.js",
   "types": "src/types.d.ts",
   "scripts": {
     "dev": "npx webpack-dev-server",
-    "build": "npx webpack --config webpack.config.prod.js",
-    "postbuild": "echo Gzip file size : && npx gzip-size lib/fitext.min.js"
+    "build": "klap build"
   },
   "browserslist": [
     "defaults"
@@ -38,6 +40,7 @@
     "node": ">=13.11.0"
   },
   "devDependencies": {
+    "klap": "^4.5.0",
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
     "autoprefixer": "^9.7.6",
