@@ -97,16 +97,16 @@ This option makes the font-size enlarge if the container is big enough. This opt
 
 `defaults` as `> 0.5%, last 2 versions, Firefox ESR, not dead`
 
-You can check [here](https://github.com/browserslist/browserslist#queries) what means the configuration parameters used in the [package.json](package.json) at `browserslist`.
+You can check [here](https://github.com/browserslist/browserslist#queries) the meaning of the configuration parameters used for the `browserslist` key in the [package.json](package.json).
 The support is checked on [this range of browsers](https://browserl.ist/?q=defaults).
 
-##Performance Tips
+## Performance Tips
 
-Type|Value|Why this weight ?
-:----:|:-----:|---
-**Original**|<span style="color:lightseagreen">1.81</span> <sup>kB</sup>| As developed, without any browser support and not as a module. [It's here](src/fitext.js "Get the file").
-**Minified**|<span style="color:mediumseagreen">2.79</span> <sup>kB</sup>| With all [Browser Support](#browser-suport), as a module and of course minified !
-**Gzipped**|<span style="color:green">1.20</span> <sup>kB</sup>| Same as the minified version but you support gzip 🎉 !
+| Type         | Value | Why this weight ? |
+| :----------- |:----- | :---------------- |
+| **Original** | <span color="lightseagreen">1.81</span><sup>kB</sup>| As developed, without any browser support and not as a module. [It's here](src/fitext.js "Get the file"). |
+| **Minified** | <span style="color:mediumseagreen">2.79</span><sup>kB</sup>| With all [Browser Support](#browser-suport), as a module and of course minified! |
+| **Gzipped**  | <span style="color:green">1.20</span><sup>kB</sup>| Same as the minified version but you support gzip 🎉! |
 
 - Try to use relative font-size wherever possible.
 - If you targeting a parent element all child are already taken in account, don't execute a `fit` function on them.
