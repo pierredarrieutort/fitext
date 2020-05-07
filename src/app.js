@@ -61,7 +61,6 @@ function demo() {
     enlargeCheckbox.onchange = handleWideable
 
     // Init
-
     fitterContainer.style.width = `${widthInput.value}%`
     fitterContainer.style.height = `${heightInput.value}%`
     fit([fitterContainer], enlargeCheckbox.checked)
