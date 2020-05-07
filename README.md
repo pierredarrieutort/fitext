@@ -63,7 +63,7 @@ function adjustHeight() {
     const elements = document.getElementsByClassName('fit-this-text');
     const wideable = true;
 
-    fitext(elements, wideable)
+    fitext(elements, wideable);
 }
 ```
 
