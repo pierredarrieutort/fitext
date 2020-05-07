@@ -82,8 +82,8 @@ The `fitext` function accepts two parameters. Allowed values are:
 
 | Name             | Required | Type      | Description | Default value |
 | :--------------- | :------- | :-------- | :---------- | :------------ |
-| **`fittables`**  | required | `Array`   | Lists all `fittables` elements. [More](#fittables) | `[]` |
-| **`wideable`**   | optional | `Boolean` | Enables the font-size enlarger. [More](#wideable) | `false` |
+| **`fittables`**  | required | `Array`   | List of elements you want to make _fittable_. [More](#fittables) | `[]` |
+| **`wideable`**   | optional | `Boolean` | Enables font-size enlargement when set to _true_. [More](#wideable) | `false` |
 
 - `fittables`
     This option can accept arrays or nodes/HTML collections or anything else that can be destructured following an array pattern. If you want to use `document.querySelector('element')`, put it in an array like this: `[document.querySelector('element')]`.
