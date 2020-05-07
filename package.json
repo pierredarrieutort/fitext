@@ -7,11 +7,8 @@
   "types": "src/types.d.ts",
   "scripts": {
     "dev": "npx webpack-dev-server",
-    "build": "npx klap build --no-sourcemap -b --browserslist"
+    "build": "klap build --no-sourcemap"
   },
-  "browserslist": [
-    "defaults"
-  ],  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pierredarrieutort/fitext.git"
@@ -45,7 +42,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.5.3",
     "html-webpack-plugin": "^4.3.0",
-    "klap": "^4.5.0",
+    "klap": "^4.5.1",
     "mini-css-extract-plugin": "^0.9.0",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
