@@ -8,17 +8,19 @@ Fitext is a module which adapts the textual elements so that they are always con
 
 ## Table of contents
 
-1. [Installation](#installation)
-2. [Getting Started](#getting-started)
-3. [Example](#Example)
-4. [Using a CDN](#using-a-cdn)
-5. [Options](#options)
-6. [Browser Support](#browser-suport)
-7. [Performance tips](#performance-tips)
-8. [Contributors](#contributors)
-9. [License](#license)
+1. [Getting Started](#getting-started)
+    1. [Installation](#installation)
+    1. [Usage](#usage)
+    1. [Using a CDN](#using-a-cdn)
+1. [Options](#options)
+1. [Browser Support](#browser-suport)
+1. [Performance tips](#performance-tips)
+1. [Contributors](#contributors)
+1. [License](#license)
 
-## Installation
+## Getting started
+
+### Installation
 
 ```shell
 $ npm install --save fitext
@@ -27,7 +29,7 @@ $ npm install --save fitext
 $ yarn add fitext
 ```
 
-## Getting Started
+### Usage
 
 ES6 Modules:
 ```js
@@ -41,6 +43,7 @@ fit(fittables, true);
 No-module:
 ```html
 <script src='lib/fitext.min.js' defer></script>
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const fittables = document.getElementsByClassName('fit-this-text');
@@ -48,7 +51,8 @@ No-module:
     });
 </script>
 ```
-## Example
+
+#### Example
 
 ```js
 import fit from 'fitext';
@@ -63,9 +67,9 @@ function adjustHeight() {
 }
 ```
 
-In the previous example, we listen to all events that can make texts overflow their containers, we prevent all break cases by executing the `fit` function.
+In the above example, we listen to all events that can make texts overflow their containers, we prevent all break cases by executing the `fit` function.
 
-## Using a CDN
+### Using a CDN
 
 - Minified version: `https://cdn.jsdelivr.net/npm/fitext@latest/lib/fitext.min.js`
 - Original version: `https://cdn.jsdelivr.net/npm/fitext@latest/src/fitext.js`
@@ -74,19 +78,20 @@ In the previous example, we listen to all events that can make texts overflow th
 
 ## Options
 
-You can pass options in `fitext`. Allowed values are as follows:
+You can pass options to `fitext`. Allowed values are:
 
 | Name             | Type      | Default | Description |
 | :--------------- | :-------- | :------ | :---------- |
 | **`fittables`**  | `Array`   | `[]`    | Lists all `fittables` elements. [More](#fittables)|
 | **`wideable`**   | `Boolean` | `false` | Enables the font-size enlarger. [More](#wideable)|
 
-- ### `fittables`
-    This option can accept arrays or nodes/HTML collection or anything else that can be destructured following an array pattern. If you want to use a `document.querySelector('element')`, put it in an array like this: `[document.querySelector('element')]`.
+### `fittables`
 
-- ### `wideable`
-    This option enlarges the font size above the font size established before executing the `fit` function.
-    The default behavior of this options limits the font-size to the font-size established before the function execution.
+This option can accept arrays or nodes/HTML collections or anything else that can be destructured following an array pattern. If you want to use `document.querySelector('element')`, put it in an array like this: `[document.querySelector('element')]`.
+
+### `wideable`
+
+This option makes the font-size enlarge if the container is big enough. This option is not enabled by default and limits the font-size to the value it is declared before the execution of the `fit` function.
 
 ## Browser Support
 
