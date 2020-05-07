@@ -9,6 +9,9 @@
     "dev": "npx webpack-dev-server",
     "build": "klap build --no-sourcemap"
   },
+  "browserslist": [
+    "defaults"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pierredarrieutort/fitext.git"
