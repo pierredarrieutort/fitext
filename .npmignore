@@ -1,12 +1,14 @@
 src/app.js
 src/index.html
 src/style.scss
+src/img
+
 package-lock.json
 node_modules
 dist
 .DS_Store
 .gitignore
+.github
+
 webpack.config.js
 webpack.config.prod.js
-fitext_logo.svg
-img

@@ -1,12 +1,12 @@
 import './styles.scss'
 
-import fit from './fitext'
+import fitext from './fitext'
 
 window.addEventListener('DOMContentLoaded', () => {
     // const fittableElements = document.getElementsByClassName('fitter-container')
     // const wideable = true
 
-    // fit(fittableElements, wideable)
+    // fitext(fittableElements, wideable)
 
     demo()
 })
@@ -36,19 +36,19 @@ function demo() {
     function handleWidth({ target }) {
         widthOutput.value = target.value
         fitterContainer.style.width = `${target.value}%`
-        fit([fitterContainer], enlargeCheckbox.checked)
+        fitext([fitterContainer], enlargeCheckbox.checked)
     }
 
     function handleHeight({ target }) {
         heightOutput.value = target.value
         fitterContainer.style.height = `${target.value}%`
-        fit([fitterContainer], enlargeCheckbox.checked)
+        fitext([fitterContainer], enlargeCheckbox.checked)
     }
 
     function handlePadding({ target }) {
         paddingOutput.value = target.value
         fitterContainer.style.padding = `${target.value}px`
-        fit([fitterContainer], enlargeCheckbox.checked)
+        fitext([fitterContainer], enlargeCheckbox.checked)
     }
 
     function reset() {
@@ -62,11 +62,11 @@ function demo() {
         fitterContainer.style.width = `${initialSize[0]}%`
         fitterContainer.style.height = `${initialSize[1]}%`
 
-        fit([fitterContainer], enlargeCheckbox.checked)
+        fitext([fitterContainer], enlargeCheckbox.checked)
     }
 
     function handleWideable() {
-        fit([fitterContainer], enlargeCheckbox.checked)
+        fitext([fitterContainer], enlargeCheckbox.checked)
     }
 
     widthInput.oninput = handleWidth
@@ -79,5 +79,5 @@ function demo() {
     fitterContainer.style.width = `${widthInput.value}%`
     fitterContainer.style.height = `${heightInput.value}%`
     fitterContainer.style.padding = `${paddingInput.value}px`
-    fit([fitterContainer], enlargeCheckbox.checked)
+    fitext([fitterContainer], enlargeCheckbox.checked)
 }

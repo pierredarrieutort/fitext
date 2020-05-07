@@ -33,11 +33,11 @@ $ yarn add fitext
 
 ES6 Modules:
 ```js
-import fit from 'fitext';
+import fitext from 'fitext';
 
-const fittables = document.getElementsByClassName('fit-this-text');
+const fittables = document.querySelectorAll('.fit-this-text');
 
-fit(fittables, true);
+fitext(fittables, true);
 ```
 
 No-module:
@@ -46,8 +46,8 @@ No-module:
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const fittables = document.getElementsByClassName('fit-this-text');
-        fit(fittables, true);
+        const fittables = document.querySelectorAll('.fit-this-text');
+        fitext(fittables, true);
     });
 </script>
 ```
@@ -55,7 +55,7 @@ No-module:
 #### Example
 
 ```js
-import fit from 'fitext';
+import fitext from 'fitext';
 
 ['DOMContentLoaded', 'resize'].forEach(e => window.addEventListener(e, adjustHeight));
 
@@ -63,11 +63,11 @@ function adjustHeight() {
     const elements = document.getElementsByClassName('fit-this-text');
     const wideable = true;
 
-    fit(elements, wideable)
+    fitext(elements, wideable)
 }
 ```
 
-In the above example, we listen to all events that can make texts overflow their containers, we prevent all break cases by executing the `fit` function.
+In the above example, we listen to all events that can make texts overflow their containers, we prevent all break cases by executing the `fitext` function.
 
 ### Using a CDN
 
@@ -89,7 +89,7 @@ The `fitext` function accepts two parameters. Allowed values are:
     This option can accept arrays or nodes/HTML collections or anything else that can be destructured following an array pattern. If you want to use `document.querySelector('element')`, put it in an array like this: `[document.querySelector('element')]`.
 
 - `wideable`
-    This option makes the font-size enlarge if the container is big enough. This option is not enabled by default and limits the font-size to the value it is declared before the execution of the `fit` function.
+    This option makes the font-size enlarge if the container is big enough. This option is not enabled by default and limits the font-size to the value it is declared before the execution of the `fitext` function.
 
 ## Browser Support
 
@@ -102,12 +102,12 @@ The support is checked on [this range of browsers](https://browserl.ist/?q=defau
 
 | Type         | Value | Why this weight? |
 | :----------- |:----- | :--------------- |
-| **Original** | <span style="color: lightseagreen">1.81</span> kB | As developed, without any browser support and not as a module. [It's here](src/fitext.js "Get the file"). |
-| **Minified** | <span style="color: mediumseagreen">2.79</span> kB | With all [Browser Support](#browser-suport), as a module and of course minified! |
-| **Gzipped**  | <span style="color: green">1.20</span> kB | Same as the minified version but you support gzip! 🎉 |
+| **Original** | <span style="color: lightseagreen">2.16</span> kB | As developed, without any browser support and not as a module. [It's here](src/fitext.js "Get the file"). |
+| **Minified** | <span style="color: mediumseagreen">2.83</span> kB | With all [Browser Support](#browser-suport), as a module and of course minified! |
+| **Gzipped**  | <span style="color: green">1.23</span> kB | Same as the minified version but you support gzip! 🎉 |
 
 - Try to use relative font-size wherever possible.
-- If you're targeting a parent element, all children are already taken in account, so don't execute a `fit` function on them.
+- If you're targeting a parent element, all children are already taken in account, so don't execute a `fitext` function on them.
 - Try to avoid getting to much containers into the _fittable_ elements.
 
 ## Contributors
