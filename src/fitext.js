@@ -1,9 +1,9 @@
 export default function fit(fittables, wideable) {
     [...fittables].forEach(box => {
-        const WRAPPER_CLASSNAME = 'fitter'
+        const wrapperClassName = 'fitter'
 
-        if (!RegExp(WRAPPER_CLASSNAME).test(box.firstElementChild.className)) {
-            box.innerHTML = `<div class='${WRAPPER_CLASSNAME}'>${box.innerHTML}</div>`
+        if (!RegExp(wrapperClassName).test(box.firstElementChild.className)) {
+            box.innerHTML = `<div class='${wrapperClassName}'>${box.innerHTML}</div>`
         }
 
         const fitter = box.firstElementChild
