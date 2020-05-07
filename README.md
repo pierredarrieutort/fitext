@@ -1,7 +1,6 @@
 <h1 align="center">fitext</h1>
 
-Fitext is a module which adapts the textual elements so that they are always contained in their parents without ever exceeding whatever the parent height and width. This [lightweight](#performance-tips) library using no-one dependency. **You can find a playable demo [here](https://pierredarrieutort.github.io/fitext/).**
-___
+Fitext is a module which adapts the textual elements so that they are always contained in their parents without ever exceeding whatever the parent height and width. This [lightweight](#performance-tips) library doesn't use any dependency. **[Play with the demo](https://pierredarrieutort.github.io/fitext/) to see what it's like!**
 
 <div align="center">
     <img src="./src/img/fitext_logo.jpg" alt="Logo fitext">
@@ -106,7 +105,7 @@ Type|Value|Why this weight ?
 
 - Try to use relative font-size wherever possible.
 - If you targeting a parent element all child are already taken in account, don't execute a `fit` function on them.
-- Try to avoid get to much containers into the fittable elements.
+- Try to avoid getting to much containers into the fittable elements.
 
 ## Contributors
 
