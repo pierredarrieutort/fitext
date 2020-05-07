@@ -1,6 +1,6 @@
 import './style.scss'
 
-import fitext from './fitext'
+import fitext from '../dist/fitext.umd'
 
 
 ['DOMContentLoaded', 'resize'].forEach( event => window.addEventListener( event, adjustHeight ) )

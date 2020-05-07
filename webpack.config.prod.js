@@ -7,7 +7,7 @@ const
 module.exports = {
     entry: './src/fitext.js',
     output: {
-        path: path.resolve( 'lib' ),
+        path: path.resolve( 'dist' ),
         filename: 'fitext.min.js',
         library: 'fitext',
         libraryTarget: 'umd'
