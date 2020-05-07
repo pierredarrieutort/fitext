@@ -38,11 +38,18 @@ h1, h2 {
   margin-top: 0;
   margin-bottom: 0;
   font-weight: 700;
+  line-height: normal;
   letter-spacing: -.025em;
 }
 
+h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
 h2 {
-  margin-bottom: .5rem;
+  margin-bottom: .75rem;
+  font-size: 1.5rem;
 }
 
 p {
