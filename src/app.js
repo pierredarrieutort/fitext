@@ -3,18 +3,20 @@ import './styles.scss'
 import fitext from './fitext'
 
 window.addEventListener('DOMContentLoaded', () => {
-    // const fittableElements = document.querySelectorAll('.fitter-container')
-    // const wideable = true
+    const fitterContainer = document.querySelector('.fitter-container')
+    const enlargeFont = true
 
-    // fitext(fittableElements, wideable)
+    window.addEventListener('resize', () => {
+        fitext([fitterContainer], enlargeFont)
+    })
 
-    demo()
+    demo(fitterContainer)
 })
 
 
 //** FOLLOWING CODE IS DEDICATED TO THE DEMO **//
 
-function demo() {
+function demo(fitterContainer) {
     // Form inputs
     const widthInput = document.querySelector('#widthInput')
     const heightInput = document.querySelector('#heightInput')
@@ -31,7 +33,6 @@ function demo() {
 
     const initialSize = [widthInput.value, heightInput.value]
     const initialPadding = paddingInput.value
-    const fitterContainer = document.querySelector('.fitter-container')
 
     function handleWidth({ target }) {
         widthOutput.value = target.value
@@ -65,7 +66,7 @@ function demo() {
         fitext([fitterContainer], enlargeCheckbox.checked)
     }
 
-    function handleWideable() {
+    function handleEnlargeFont() {
         fitext([fitterContainer], enlargeCheckbox.checked)
     }
 
@@ -73,7 +74,7 @@ function demo() {
     heightInput.oninput = handleHeight
     paddingInput.oninput = handlePadding
     resetButton.onclick = reset
-    enlargeCheckbox.onchange = handleWideable
+    enlargeCheckbox.onchange = handleEnlargeFont
 
     // Init
     fitterContainer.style.width = `${widthInput.value}%`
