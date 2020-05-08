@@ -19,7 +19,10 @@ export default function fitext(fittables, wideable) {
                 return fitter.offsetHeight > boxHeight
             }
 
-            const updateFontSize = (child, multiplier) => child.style.fontSize = `${parseFloat(getComputedStyle(child).fontSize) * multiplier}px`
+            const updateFontSize = (child, multiplier) => {
+                const childFontSize = parseFloat(getComputedStyle(child).fontSize)
+                child.style.fontSize = `${childFontSize * multiplier}px`
+            }
 
             children.forEach(child => {
                 if (!child.dataset.size) {
