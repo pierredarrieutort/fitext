@@ -41,9 +41,11 @@ export default function fitext(fittables, wideable) {
                             children.forEach(child => updateFontSize(child, 1.01))
                         }
                     } else {
-                        children.forEach(child => parseFloat(child.style.fontSize) * 1.01 < child.dataset.size
-                            ? updateFontSize(child, 1.01)
-                            : child.style.removeProperty('font-size'))
+                        children.forEach(child => {
+                            parseFloat(child.style.fontSize) * 1.01 < child.dataset.size
+                                ? updateFontSize(child, 1.01)
+                                : child.style.removeProperty('font-size')
+                        })
                     }
                 }
 
