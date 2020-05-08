@@ -19,9 +19,9 @@ export default function fitext(fittables, wideable) {
                 return fitter.offsetHeight > boxHeight
             }
 
-            const updateFontSize = (child, multiplier) => {
+            const updateFontSize = (child, amount) => {
                 const childFontSize = parseFloat(getComputedStyle(child).fontSize)
-                child.style.fontSize = `${childFontSize * multiplier}px`
+                child.style.fontSize = `${childFontSize + amount}px`
             }
 
             children.forEach(child => {
@@ -30,15 +30,20 @@ export default function fitext(fittables, wideable) {
                 }
             })
 
-            function check() {
+            // This is where the font sizes of the elements are computed
+            function computeFontSizes() {
                 if (overflowing()) {
                     while (overflowing()) {
-                        children.forEach(child => updateFontSize(child, .99))
+                        children.forEach(child => {
+                            updateFontSize(child, -1)
+                        })
                     }
                 } else {
                     if (wideable) {
                         while (!overflowing()) {
-                            children.forEach(child => updateFontSize(child, 1.01))
+                            children.forEach(child => {
+                                updateFontSize(child, 1)
+                            })
                         }
                     } else {
                         children.forEach(child => {
@@ -50,11 +55,11 @@ export default function fitext(fittables, wideable) {
                 }
 
                 if (overflowing()) {
-                    check()
+                    computeFontSizes()
                 }
             }
 
-            check()
+            computeFontSizes()
         }
 
         core()
