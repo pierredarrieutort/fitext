@@ -3,20 +3,19 @@ import './styles.scss'
 import fitext from './fitext'
 
 window.addEventListener('DOMContentLoaded', () => {
-    const fitterContainer = document.querySelector('.fitter-container')
-    const enlargeFont = true
-
     window.addEventListener('resize', () => {
-        fitext([fitterContainer], enlargeFont)
+        fitext('.fitter-container', true)
     })
 
-    demo(fitterContainer)
+    demo('.fitter-container')
 })
 
 
 //** FOLLOWING CODE IS DEDICATED TO THE DEMO **//
 
-function demo(fitterContainer) {
+function demo(selector) {
+    const fitterContainer = document.querySelector(selector)
+
     // Form inputs
     const widthInput = document.querySelector('#widthInput')
     const heightInput = document.querySelector('#heightInput')
@@ -37,19 +36,19 @@ function demo(fitterContainer) {
     function handleWidth({ target }) {
         widthOutput.value = target.value
         fitterContainer.style.width = `${target.value}%`
-        fitext([fitterContainer], enlargeCheckbox.checked)
+        fitext(selector, enlargeCheckbox.checked)
     }
 
     function handleHeight({ target }) {
         heightOutput.value = target.value
         fitterContainer.style.height = `${target.value}%`
-        fitext([fitterContainer], enlargeCheckbox.checked)
+        fitext(selector, enlargeCheckbox.checked)
     }
 
     function handlePadding({ target }) {
         paddingOutput.value = target.value
         fitterContainer.style.padding = `${target.value}px`
-        fitext([fitterContainer], enlargeCheckbox.checked)
+        fitext(selector, enlargeCheckbox.checked)
     }
 
     function reset() {
@@ -63,11 +62,11 @@ function demo(fitterContainer) {
         fitterContainer.style.width = `${initialSize[0]}%`
         fitterContainer.style.height = `${initialSize[1]}%`
 
-        fitext([fitterContainer], enlargeCheckbox.checked)
+        fitext(selector, enlargeCheckbox.checked)
     }
 
     function handleEnlargeFont() {
-        fitext([fitterContainer], enlargeCheckbox.checked)
+        fitext(selector, enlargeCheckbox.checked)
     }
 
     widthInput.oninput = handleWidth
@@ -80,5 +79,5 @@ function demo(fitterContainer) {
     fitterContainer.style.width = `${widthInput.value}%`
     fitterContainer.style.height = `${heightInput.value}%`
     fitterContainer.style.padding = `${paddingInput.value}px`
-    fitext([fitterContainer], enlargeCheckbox.checked)
+    fitext(selector, enlargeCheckbox.checked)
 }

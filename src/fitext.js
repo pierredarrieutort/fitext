@@ -1,70 +1,69 @@
-export default function fitext(fittables, wideable) {
-    [...fittables].forEach(box => {
-        const wrapperClassName = 'fitter'
+const isOverflowing = (wrapper, container) => {
+    const containerPaddingY = parseFloat(getComputedStyle(container).paddingTop) + parseFloat(getComputedStyle(container).paddingBottom)
+    const containerHeight = container.offsetHeight - containerPaddingY
 
-        if (!RegExp(wrapperClassName).test(box.firstElementChild.className)) {
-            box.innerHTML = `<div class='${wrapperClassName}'>${box.innerHTML}</div>`
+    return wrapper.offsetHeight > containerHeight
+}
+
+const updateFontSize = (element, amount) => {
+    const childFontSize = parseFloat(getComputedStyle(element).fontSize)
+    element.style.fontSize = `${childFontSize + amount}px`
+}
+
+const fitext = (selector, wideable) => {
+    const fittables = document.querySelectorAll(selector)
+
+    const wrapperClassName = 'fitter'
+
+    fittables.forEach(fittableContainer => {
+        if (!RegExp(wrapperClassName).test(fittableContainer.firstElementChild.className)) {
+            fittableContainer.innerHTML = `<div class='${wrapperClassName}'>${fittableContainer.innerHTML}</div>`
         }
 
-        const fitter = box.firstElementChild
-        const children = [...box.querySelectorAll('*')]
+        const wrapper = fittableContainer.firstElementChild // get the wrapper we've just added to the container
+        const elementsToFit = [...fittableContainer.querySelectorAll('*')]
 
-        fitter.style.display = 'inline-block'
+        wrapper.style.display = 'inline-block'
 
-        const core = () => {
-            const isOverflowing = () => {
-                const boxPaddingY = parseFloat(getComputedStyle(box).paddingTop) + parseFloat(getComputedStyle(box).paddingBottom)
-                const boxHeight = box.offsetHeight - boxPaddingY
-
-                return fitter.offsetHeight > boxHeight
+        elementsToFit.forEach(element => {
+            if (!element.dataset.size) {
+                element.dataset.size = getComputedStyle(element).fontSize
             }
+        })
 
-            const updateFontSize = (child, amount) => {
-                const childFontSize = parseFloat(getComputedStyle(child).fontSize)
-                child.style.fontSize = `${childFontSize + amount}px`
-                console.log(child.style.fontSize)
-            }
-
-            children.forEach(child => {
-                if (!child.dataset.size) {
-                    child.dataset.size = getComputedStyle(child).fontSize
+        // This is where the font sizes of the elements are computed
+        const computeFontSizes = () => {
+            if (isOverflowing(wrapper, fittableContainer)) {
+                while (isOverflowing(wrapper, fittableContainer)) {
+                    elementsToFit.forEach(element => {
+                        updateFontSize(element, -1)
+                    })
                 }
-            })
-
-            // This is where the font sizes of the elements are computed
-            function computeFontSizes() {
-                if (isOverflowing()) {
-                    while (isOverflowing()) {
-                        children.forEach(child => {
-                            updateFontSize(child, -1)
+            } else {
+                if (wideable) {
+                    while (!isOverflowing(wrapper, fittableContainer)) {
+                        elementsToFit.forEach(child => {
+                            updateFontSize(child, 1)
                         })
                     }
                 } else {
-                    if (wideable) {
-                        while (!isOverflowing()) {
-                            children.forEach(child => {
-                                updateFontSize(child, 1)
-                            })
-                        }
-                    } else {
-                        children.forEach(child => {
-                            parseFloat(child.style.fontSize) * 1.01 < child.dataset.size
-                                ? updateFontSize(child, 1.01)
-                                : child.style.removeProperty('font-size')
-                        })
-                    }
-                }
-
-                if (isOverflowing()) {
-                    computeFontSizes()
+                    elementsToFit.forEach(element => {
+                        parseFloat(element.style.fontSize) * 1.01 < element.dataset.size
+                            ? updateFontSize(element, 1.01)
+                            : element.style.removeProperty('font-size')
+                    })
                 }
             }
 
-            computeFontSizes()
+            if (isOverflowing(wrapper, fittableContainer)) {
+                computeFontSizes()
+            }
         }
 
-        core()
+        computeFontSizes()
 
-        fitter.style.removeProperty('display')
+        wrapper.style.removeProperty('display')
     })
 }
+
+export default fitext
