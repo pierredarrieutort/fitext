@@ -7,10 +7,10 @@
   "types": "src/types.d.ts",
   "scripts": {
     "dev": "npx webpack-dev-server",
-    "build": "klap build --no-sourcemap"
+    "build": "klap build --no-sourcemap -b --browserslist"
   },
   "browserslist": [
-    "defaults"
+    "last 2 Chrome versions"
   ],
   "repository": {
     "type": "git",
