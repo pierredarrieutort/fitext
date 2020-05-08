@@ -12,7 +12,7 @@ export default function fitext(fittables, wideable) {
         fitter.style.display = 'inline-block'
 
         const core = () => {
-            const overflowing = () => {
+            const isOverflowing = () => {
                 const boxPaddingY = parseFloat(getComputedStyle(box).paddingTop) + parseFloat(getComputedStyle(box).paddingBottom)
                 const boxHeight = box.offsetHeight - boxPaddingY
 
@@ -22,6 +22,7 @@ export default function fitext(fittables, wideable) {
             const updateFontSize = (child, amount) => {
                 const childFontSize = parseFloat(getComputedStyle(child).fontSize)
                 child.style.fontSize = `${childFontSize + amount}px`
+                console.log(child.style.fontSize)
             }
 
             children.forEach(child => {
@@ -32,15 +33,15 @@ export default function fitext(fittables, wideable) {
 
             // This is where the font sizes of the elements are computed
             function computeFontSizes() {
-                if (overflowing()) {
-                    while (overflowing()) {
+                if (isOverflowing()) {
+                    while (isOverflowing()) {
                         children.forEach(child => {
                             updateFontSize(child, -1)
                         })
                     }
                 } else {
                     if (wideable) {
-                        while (!overflowing()) {
+                        while (!isOverflowing()) {
                             children.forEach(child => {
                                 updateFontSize(child, 1)
                             })
@@ -54,7 +55,7 @@ export default function fitext(fittables, wideable) {
                     }
                 }
 
-                if (overflowing()) {
+                if (isOverflowing()) {
                     computeFontSizes()
                 }
             }
