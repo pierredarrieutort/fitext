@@ -42,8 +42,7 @@ fitext(fittables, true);
 
 No-module:
 ```html
-<script src='lib/fitext.min.js' defer></script>
-
+<script src='dist/fitext.min.js' defer></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const fittables = document.querySelectorAll('.fit-this-text');
@@ -71,7 +70,7 @@ In the above example, we listen to all events that can make texts overflow their
 
 ### Using a CDN
 
-- Minified version: `https://cdn.jsdelivr.net/npm/fitext@latest/lib/fitext.min.js`
+- Minified version: `https://cdn.jsdelivr.net/npm/fitext@latest/dist/fitext.min.js`
 - Original version: `https://cdn.jsdelivr.net/npm/fitext@latest/src/fitext.js`
 - For specific files or enhanced configuration you can go [here](https://www.jsdelivr.com/package/npm/fitext).
 

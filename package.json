@@ -1,13 +1,13 @@
 {
   "name": "fitext",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "Resizes text elements proportionally to fit any element",
-  "main": "lib/fitext.min.js",
+  "main": "dist/fitext.umd.js",
+  "source": "src/fitext.js",
   "types": "src/types.d.ts",
   "scripts": {
     "dev": "npx webpack-dev-server",
-    "build": "npx webpack --config webpack.config.prod.js",
-    "postbuild": "echo Gzip file size : && npx gzip-size lib/fitext.min.js"
+    "build": "klap build --no-sourcemap"
   },
   "browserslist": [
     "defaults"
@@ -44,14 +44,13 @@
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.5.3",
-    "gzip-size-cli": "^3.0.0",
     "html-webpack-plugin": "^4.3.0",
+    "klap": "^4.5.1",
     "mini-css-extract-plugin": "^0.9.0",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
-    "terser-webpack-plugin": "^3.0.1",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.11.0"
   }
 }
