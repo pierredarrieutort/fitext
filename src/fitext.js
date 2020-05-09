@@ -5,12 +5,11 @@ const isOverflowing = (wrapper, container) => {
     return wrapper.offsetHeight > containerHeight
 }
 
-const updateFontSize = (element, amount) => {
-    const childFontSize = parseFloat(getComputedStyle(element).fontSize)
-    element.style.fontSize = `${childFontSize + amount}px`
+const getUpdatedFontSize = (element, amount) => {
+    return parseFloat(getComputedStyle(element).fontSize) + amount
 }
 
-const fitext = (selector, wideable) => {
+const fitext = (selector, enlargeFont) => {
     const fittables = document.querySelectorAll(selector)
 
     const wrapperClassName = 'fitter'
@@ -31,25 +30,27 @@ const fitext = (selector, wideable) => {
             }
         })
 
+        const updateFontSizes = (elements, amount) => {
+            elements.forEach(element => {
+                element.style.fontSize = `${getUpdatedFontSize(element, amount)}px`
+            })
+        }
+
         // This is where the font sizes of the elements are computed
         const computeFontSizes = () => {
             if (isOverflowing(wrapper, fittableContainer)) {
                 while (isOverflowing(wrapper, fittableContainer)) {
-                    elementsToFit.forEach(element => {
-                        updateFontSize(element, -1)
-                    })
+                    updateFontSizes(elementsToFit, -1)
                 }
             } else {
-                if (wideable) {
+                if (enlargeFont) {
                     while (!isOverflowing(wrapper, fittableContainer)) {
-                        elementsToFit.forEach(child => {
-                            updateFontSize(child, 1)
-                        })
+                        updateFontSizes(elementsToFit, 1)
                     }
                 } else {
                     elementsToFit.forEach(element => {
-                        parseFloat(element.style.fontSize) * 1.01 < element.dataset.size
-                            ? updateFontSize(element, 1.01)
+                        getUpdatedFontSize(element, 1) < element.dataset.size
+                            ? element.style.fontSize = `${getUpdatedFontSize(element, 1)}px`
                             : element.style.removeProperty('font-size')
                     })
                 }
