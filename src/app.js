@@ -3,20 +3,6 @@ import './style.scss'
 import fitext from './fitext'
 
 
-['DOMContentLoaded', 'resize'].forEach( event => window.addEventListener( event, adjustHeight ) )
-
-function adjustHeight() {
-    const
-        ELEMENTS = document.getElementsByClassName( 'fit-this-text' ),
-        IS_WIDEABLE = true
-
-    fitext( ELEMENTS, IS_WIDEABLE )
-}
-
-
-
-//** FOLLOWING CODE IS DEDICATED TO THE DEMO **//
-
 window.addEventListener( 'DOMContentLoaded', demo )
 
 function demo() {
@@ -31,20 +17,22 @@ function demo() {
         WIDTH_OUTPUT = document.getElementById( 'widthVal' ),
         HEIGHT_OUTPUT = document.getElementById( 'heightVal' )
 
+
     WIDTH.oninput = handleWidth
     HEIGHT.oninput = handleHeight
     RESET.onclick = reset
     WIDEABLE.onchange = handleWideable
-
+    window.onresize = () => fitext( WIDEABLE.checked )
+    fitext( WIDEABLE.checked )
 
     function handleWidth() {
         WIDTH_OUTPUT.value = HANDLEABLE.style.width = `${this.value}%`
-        fitext( [HANDLEABLE], WIDEABLE.checked )
+        fitext( WIDEABLE.checked )
     }
 
     function handleHeight() {
         HEIGHT_OUTPUT.value = HANDLEABLE.style.height = `${this.value}%`
-        fitext( [HANDLEABLE], WIDEABLE.checked )
+        fitext( WIDEABLE.checked )
     }
 
     function reset() {
@@ -52,10 +40,10 @@ function demo() {
         HEIGHT_OUTPUT.value = HANDLEABLE.style.height = `${INITIAL_VALUES[1]}%`
         WIDTH.value = INITIAL_VALUES[0]
         HEIGHT.value = INITIAL_VALUES[1]
-        fitext( [HANDLEABLE], WIDEABLE.checked )
+        fitext( WIDEABLE.checked )
     }
 
     function handleWideable() {
-        fitext( [HANDLEABLE], WIDEABLE.checked )
+        fitext( WIDEABLE.checked )
     }
 }

@@ -1,5 +1,5 @@
-export default function fitext( fittables, wideable ) {
-    [...fittables].forEach( box => {
+export default function fitext( wideable ) {
+    Array.from(document.getElementsByClassName( 'fit-this-text' )).forEach( box => {
 
         const WRAPPER_CLASSNAME = 'fitter'
 
@@ -22,7 +22,7 @@ export default function fitext( fittables, wideable ) {
 
                     return FITTER.offsetHeight > NORMALIZED_BOX_HEIGHT
                 },
-                UPDATE_FONT_SIZE = ( child, multiplier ) => child.style.fontSize = `${parseFloat( getComputedStyle( child ).fontSize ) * multiplier}px`
+                UPDATE_FONT_SIZE = ( child, adder ) => child.style.fontSize = `${parseFloat( getComputedStyle( child ).fontSize ) + (adder)}px`
 
 
             CHILDREN.forEach( child => {
@@ -33,14 +33,14 @@ export default function fitext( fittables, wideable ) {
             function check() {
                 if ( OVERFLOWING() )
                     while ( OVERFLOWING() )
-                        CHILDREN.forEach( child => UPDATE_FONT_SIZE( child, .99 ) )
+                        CHILDREN.forEach( child => UPDATE_FONT_SIZE( child, -.5 ) )
                 else
                     if ( wideable )
                         while ( !OVERFLOWING() )
-                            CHILDREN.forEach( child => UPDATE_FONT_SIZE( child, 1.01 ) )
+                            CHILDREN.forEach( child => UPDATE_FONT_SIZE( child, .5 ) )
                     else
-                        CHILDREN.forEach( child => parseFloat( child.style.fontSize ) * 1.01 < child.dataset.size
-                            ? UPDATE_FONT_SIZE( child, 1.01 )
+                        CHILDREN.forEach( child => parseFloat( child.style.fontSize ) + .5 < child.dataset.size
+                            ? UPDATE_FONT_SIZE( child, .5 )
                             : child.style.removeProperty( 'font-size' ) )
 
                 if ( OVERFLOWING() )
