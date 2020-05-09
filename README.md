@@ -35,9 +35,7 @@ ES6 Modules:
 ```js
 import fitext from 'fitext';
 
-const fittables = document.querySelectorAll('.fit-this-text');
-
-fitext(fittables, true);
+fitext('.fit-this-text', true);
 ```
 
 No-module:
@@ -45,8 +43,7 @@ No-module:
 <script src='dist/fitext.min.js' defer></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const fittables = document.querySelectorAll('.fit-this-text');
-        fitext(fittables, true);
+        fitext('.fit-this-text', true);
     });
 </script>
 ```
@@ -59,10 +56,7 @@ import fitext from 'fitext';
 ['DOMContentLoaded', 'resize'].forEach(e => window.addEventListener(e, adjustHeight));
 
 function adjustHeight() {
-    const elements = document.querySelectorAll('.fit-this-text');
-    const wideable = true;
-
-    fitext(elements, wideable);
+    fitext('.fit-this-text', true);
 }
 ```
 
@@ -79,16 +73,16 @@ In the above example, we listen to all events that can make texts overflow their
 
 The `fitext` function accepts two parameters. Allowed values are:
 
-| Name             | Required | Type      | Description | Default value |
-| :--------------- | :------- | :-------- | :---------- | :------------ |
-| **`fittables`**  | required | `Array`   | List of elements you want to make _fittable_. [More](#fittables) | `[]` |
-| **`wideable`**   | optional | `Boolean` | Enables font-size enlargement when set to _true_. [More](#wideable) | `false` |
+| Name            | Required | Type      | Description | Default value |
+| :-------------- | :------- | :-------- | :---------- | :------------ |
+| **`selector`**  | required | `String`  | Selector of the elements you want to make _fittable_. | |
+| **`wideable`**  | optional | `Boolean` | Enables font-size enlargement when set to _true_. | `false` |
 
-- `fittables`
-    This option can accept arrays or nodes/HTML collections or anything else that can be destructured following an array pattern. If you want to use `document.querySelector('element')`, put it in an array like this: `[document.querySelector('element')]`.
+- `selector`
+    This parameter allows to select the elements you want to make _fittable_.
 
 - `wideable`
-    This option makes the font-size enlarge if the container is big enough. This option is not enabled by default and limits the font-size to the value it is declared before the execution of the `fitext` function.
+    This parameter makes the font-size enlarge if the container is big enough. This option is not enabled by default and limits the font-size to the value it is declared before the execution of the `fitext` function.
 
 ## Browser Support
 
