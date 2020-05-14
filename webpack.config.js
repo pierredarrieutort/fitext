@@ -1,22 +1,21 @@
 const
-    dev = Boolean( process.env.WEBPACK_DEV_SERVER ),
-    path = require( 'path' ),
-    HtmlWebpackPlugin = require( 'html-webpack-plugin' ),
-    MiniCssExtractPlugin = require( 'mini-css-extract-plugin' ),
-    { CleanWebpackPlugin } = require( 'clean-webpack-plugin' )
+    path = require('path'),
+    HtmlWebpackPlugin = require('html-webpack-plugin'),
+    MiniCssExtractPlugin = require('mini-css-extract-plugin'),
+    { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
     stats: {
-        children: !dev
+        children: false
     },
     entry: './src/app.js',
     output: {
-        path: path.resolve( 'dist' )
+        path: path.resolve('dist')
     },
-    watch: dev,
-    devtool: dev ? 'inline-source-map' : false,
+    watch: true,
+    devtool: 'inline-source-map',
     devServer: {
-        contentBase: path.resolve( 'dist' ),
+        contentBase: path.resolve('dist'),
         https: true,
         compress: true,
         open: true,
@@ -24,15 +23,6 @@ module.exports = {
     },
     module: {
         rules: [
-            {
-                test: /\.js$/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env']
-                    }
-                }
-            },
             {
                 test: /\.s?[ca]ss$/,
                 use: [
@@ -50,9 +40,7 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin( {
-            template: './src/index.html'
-        } ),
+        new HtmlWebpackPlugin({ template: './src/index.html' }),
         new MiniCssExtractPlugin()
     ]
 }
