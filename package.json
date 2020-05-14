@@ -2,13 +2,18 @@
   "name": "fitext",
   "version": "1.1.0-rc3",
   "description": "Resizes text elements proportionally to fit any element",
-  "main": "dist/fitext.umd.js",
   "source": "src/fitext.js",
+  "main": "dist/fitext.cjs.js",
+  "module": "dist/fitext.esm.js",
+  "browser": "dist/fitext.umd.js",
   "types": "src/types.d.ts",
   "scripts": {
     "dev": "npx webpack-dev-server",
-    "build": "klap build --no-sourcemap --browser dist/fitext.umd.js"
+    "build": "klap build --no-sourcemap -b --browserslist"
   },
+  "browserslist": [
+    "defaults"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pierredarrieutort/fitext.git"
@@ -35,19 +40,16 @@
     "node": ">=13.11.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.6",
-    "@babel/preset-env": "^7.9.6",
-    "autoprefixer": "^9.7.6",
-    "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.5.3",
     "html-webpack-plugin": "^4.3.0",
-    "klap": "^4.6.0",
+    "klap": "^4.6.1",
     "mini-css-extract-plugin": "^0.9.0",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0"
-  }
+  },
+  "dependencies": {}
 }
