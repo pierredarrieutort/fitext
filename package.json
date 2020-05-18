@@ -5,7 +5,6 @@
   "source": "src/fitext.js",
   "main": "dist/fitext.cjs.js",
   "module": "dist/fitext.esm.js",
-  "browser": "dist/fitext.umd.js",
   "types": "src/types.d.ts",
   "scripts": {
     "dev": "npx webpack-dev-server",
