@@ -1,5 +1,5 @@
 export default function fitext(wideable) {
-    [...document.getElementsByClassName('fit-this-text')].forEach(box => {
+    Array.from(document.getElementsByClassName('fit-this-text')).forEach(box => {
 
         const WRAPPER_CLASSNAME = 'fitter'
         if (!RegExp(WRAPPER_CLASSNAME).test(box.firstElementChild.className))
@@ -10,7 +10,7 @@ export default function fitext(wideable) {
 
         (function core() {
             const
-                CHILDREN = [...box.getElementsByTagName('*')],
+                CHILDREN = Array.from(box.getElementsByTagName('*')),
                 overflowing = () => {
                     const
                         BOX_PADDING_TOP = parseFloat(getComputedStyle(box).paddingTop),
@@ -36,7 +36,7 @@ export default function fitext(wideable) {
 
                 while (overflowing)
                     CHILDREN.forEach(child => update_font_size(child, -.5))
-                
+
             })()
         })()
         FITTER.style.removeProperty('display')
