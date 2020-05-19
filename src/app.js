@@ -1,6 +1,9 @@
 import './style.scss'
 
-import fitext from './fitext'
+// import fitext from './fitext'
+// import fitext from '../dist/fitext.cjs'
+// import fitext from '../dist/fitext.esm'
+import fitext from '../dist/fitext.umd'
 
 
 window.addEventListener('DOMContentLoaded', demo)
