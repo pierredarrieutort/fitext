@@ -50,6 +50,13 @@ function fitElements(container, { fitterContainerClassName, fontSizeStep, enlarg
     const computationDirection = getComputationDirection(isOverflowing(wrapper, container))
     computeFontSizes(computationDirection)
 
+    // Last step after the computation
+    if (isOverflowing(wrapper, container)) {
+        updateFontSizes(elementsToFit, -fontSizeStep)
+    } else {
+        updateFontSizes(elementsToFit, fontSizeStep)
+    }
+
     wrapper.style.removeProperty('display')
 }
 
