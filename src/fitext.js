@@ -45,17 +45,18 @@ function fitElements(container, { fitterContainerClassName, fontSizeStep, enlarg
             updateFontSizes(elementsToFit, fontSizeStep)
             return computeFontSizes(computationDirection)
         }
+
+        // Last adjustment steps
+
+        if (isOverflowing(wrapper, container)) {
+            return updateFontSizes(elementsToFit, -fontSizeStep)
+        }
+
+        return updateFontSizes(elementsToFit, fontSizeStep)
     }
 
     const computationDirection = getComputationDirection(isOverflowing(wrapper, container))
     computeFontSizes(computationDirection)
-
-    // Last step after the computation
-    if (isOverflowing(wrapper, container)) {
-        updateFontSizes(elementsToFit, -fontSizeStep)
-    } else {
-        updateFontSizes(elementsToFit, fontSizeStep)
-    }
 
     wrapper.style.removeProperty('display')
 }
