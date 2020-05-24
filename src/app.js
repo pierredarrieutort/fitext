@@ -4,7 +4,7 @@ import fitext from './fitext'
 
 window.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', () => {
-        fitext('.fitter-container', true)
+        fitext('.fitter-container', { enlargeFont: true })
     })
 
     demo('.fitter-container')
@@ -36,19 +36,19 @@ function demo(selector) {
     function handleWidth({ target }) {
         widthOutput.value = target.value
         fitterContainer.style.width = `${target.value}%`
-        fitext(selector, enlargeCheckbox.checked)
+        fitext(selector, { enlargeFont: enlargeCheckbox.checked })
     }
 
     function handleHeight({ target }) {
         heightOutput.value = target.value
         fitterContainer.style.height = `${target.value}%`
-        fitext(selector, enlargeCheckbox.checked)
+        fitext(selector, { enlargeFont: enlargeCheckbox.checked })
     }
 
     function handlePadding({ target }) {
         paddingOutput.value = target.value
         fitterContainer.style.padding = `${target.value}px`
-        fitext(selector, enlargeCheckbox.checked)
+        fitext(selector, { enlargeFont: enlargeCheckbox.checked })
     }
 
     function reset() {
@@ -62,22 +62,22 @@ function demo(selector) {
         fitterContainer.style.width = `${initialSize[0]}%`
         fitterContainer.style.height = `${initialSize[1]}%`
 
-        fitext(selector, enlargeCheckbox.checked)
+        fitext(selector, { enlargeFont: enlargeCheckbox.checked })
     }
 
     function handleEnlargeFont() {
-        fitext(selector, enlargeCheckbox.checked)
+        fitext(selector, { enlargeFont: enlargeCheckbox.checked })
     }
 
     widthInput.oninput = handleWidth
     heightInput.oninput = handleHeight
     paddingInput.oninput = handlePadding
     resetButton.onclick = reset
-    enlargeCheckbox.onchange = handleEnlargeFont
+    // enlargeCheckbox.onchange = handleEnlargeFont
 
     // Init
     fitterContainer.style.width = `${widthInput.value}%`
     fitterContainer.style.height = `${heightInput.value}%`
     fitterContainer.style.padding = `${paddingInput.value}px`
-    fitext(selector, enlargeCheckbox.checked)
+    fitext(selector, { enlargeFont: enlargeCheckbox.checked })
 }
