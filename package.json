@@ -1,6 +1,6 @@
 {
   "name": "fitext",
-  "version": "1.2.2",
+  "version": "1.3.0",
   "description": "Resizes text elements proportionally to fit any element",
   "source": "src/fitext.js",
   "main": "dist/fitext.cjs.js",
@@ -47,6 +47,5 @@
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0"
-  },
-  "dependencies": {}
+  }
 }
