@@ -29,22 +29,14 @@ export default function fitext(wideable) {
         while (overflowing())
             CHILDREN.forEach(child => update_font_size(child, -.5))
 
-        while (!overflowing()) {
 
-            if (wideable)
-                CHILDREN.forEach(child => update_font_size(child, .5))
-            else {
-
-
-                CHILDREN.forEach(child => {
-                    console.log(parseFloat(child.style.fontSize) + .5 < child.dataset.size ? 'update' : 'remove')
-                    parseFloat(child.style.fontSize) + .5 < child.dataset.size
-                        ? update_font_size(child, .5)
-                        : child.style.removeProperty('font-size')
-                })
-
-
-            }
+        let max_wide = false
+        while (!overflowing() && !max_wide) {
+            CHILDREN.forEach(child => {
+                wideable || parseFloat(child.style.fontSize) + .5 < parseFloat(child.dataset.size)
+                    ? (update_font_size(child, .5), max_wide = false)
+                    : (child.style.removeProperty('font-size'), max_wide = true)
+            })
         }
         FITTER.style.removeProperty('display')
     })
