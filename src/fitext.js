@@ -29,13 +29,13 @@ export default function fitext(wideable) {
 
             (function check() {
 
-                while (!overflowing)
+                while (overflowing())
+                    CHILDREN.forEach(child => update_font_size(child, -.5))
+
+                while (!overflowing())
                     CHILDREN.forEach(child => wideable || (parseFloat(child.style.fontSize) + .5 < child.dataset.size)
                         ? update_font_size(child, .5)
-                        : child.style.removeProperty('font-size'))
-
-                while (overflowing)
-                    CHILDREN.forEach(child => update_font_size(child, -.5))
+                        : child.style.fontSize = child.dataset.size)
 
             })()
         })()
