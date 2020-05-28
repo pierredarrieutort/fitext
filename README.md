@@ -66,7 +66,7 @@ const EVENTS = ['DOMContentLoaded', 'resize']
 
 EVENTS.forEach( e => window.addEventListener( e, fitext ) )
 //OR
-EVENTS.forEach( e => window.addEventListener( e, () => fitext(true) ) )
+EVENTS.forEach( e => window.addEventListener( e, () => fitext(true, .25) ) )
 ```
 
 In the previous example, we listen to all event that can makes overflow texts from their containers, we prevent all break cases by executing the `fitext` function.
@@ -92,11 +92,18 @@ You can pass options in `fitext`. Allowed values are as follows :
 
 |Name|Type|Default|Description|
 |:--:|:---:|:-----:|:---------|
-|**`wideable`**|`{ Boolean }`|`false`|Enables the font-size enlarger. [More](#wideable)|
+|**`wideable`**|`{ Boolean }`|`false`|Enables the font-size enlarger. [More](###wideable)|
+|**`stagger`**|`{ Float }`|`0.5`|Change stagger value. [More](###stagger)|
 
-- ### `wideable` :
+### - `wideable` :
+
     This option enlarges the font size above the font size established before executing the `fitext` function.
     The default behavior of this options limits the font-size to the font-size established before the function execution.
+
+### - `stagger` :
+
+    This option increments or decrements the current font-size by the number of pixels desired.
+    The smaller the value, the beautiful the change but may cause performance issues.
 
 ## Performance Checklist
 
