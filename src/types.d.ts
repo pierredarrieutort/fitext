@@ -1,3 +1,3 @@
 declare module 'fitext' {
-  export default function fitext(fittables: HTMLCollection | NodeList, wideable?: boolean): void;
+  export default function fitext(wideable?: boolean, stagger?: number): void;
 }
