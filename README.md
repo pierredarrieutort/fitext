@@ -93,7 +93,7 @@ You can pass options in `fitext`. Allowed values are as follows :
 |Name|Type|Default|Description|
 |:--:|:---:|:-----:|:---------|
 |**`wideable`**|`{ Boolean }`|`false`|Enables the font-size enlarger. [More](###wideable)|
-|**`stagger`**|`{ Float }`|`0.5`|Change stagger value. [More](###stagger)|
+|**`stagger`**|`{ Float }`|`1`|Change stagger value. [More](###stagger)|
 
 ### - `wideable` :
 
@@ -112,7 +112,7 @@ Good to know : Fitext is a very lightweight module : **Less than 1 kB** !
 **To increase `fitext` performances :**
 - Try to use relative font-size wherever possible.
 - If you targeting a parent element all child are already taken in account, don't execute a `fitext` function on them.
-- Try to avoid get to much containers into the fittable elements.
+- Try to avoid get too much containers into the fittable elements.
 - Don't use a CSS font-size transition, prefer `stagger` option usage.
 
 ## Contributors

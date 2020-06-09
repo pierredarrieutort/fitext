@@ -1,45 +1,45 @@
-export default function fitext(wideable, stagger = .5) {
+export default function fitext(wideable, stagger = 1) {
     Array.from(document.getElementsByClassName('fit-this-text')).forEach(box => {
 
-        const WRAPPER_CLASSNAME = 'fitter'
-        if (!RegExp(WRAPPER_CLASSNAME).test(box.firstElementChild.className))
-            box.innerHTML = `<div class='${WRAPPER_CLASSNAME}'>${box.innerHTML}</div>`
-
-        const FITTER = box.firstElementChild
-        FITTER.style.display = 'inline-block'
+        if (!/fitter/.test(box.firstElementChild.className))
+            box.innerHTML = `<div class='fitter'>${box.innerHTML}</div>`
 
         const
+            FITTER = box.firstElementChild,
             CHILDREN = Array.from(box.getElementsByTagName('*')),
             overflowing = () => {
                 const
                     BOX_PADDING_TOP = parseFloat(getComputedStyle(box).paddingTop),
                     BOX_PADDING_BOTTOM = parseFloat(getComputedStyle(box).paddingBottom),
                     NORMALIZED_BOX_HEIGHT = box.offsetHeight - (BOX_PADDING_TOP + BOX_PADDING_BOTTOM)
+                return Math.ceil(FITTER.offsetHeight - NORMALIZED_BOX_HEIGHT)
+            },
+            update_font_size = (child, reversed) => child.style.fontSize = `${parseFloat(getComputedStyle(child).fontSize) + (reversed ? -stagger : stagger)}px`
 
-                console.log(FITTER.offsetHeight, NORMALIZED_BOX_HEIGHT, FITTER.offsetHeight > NORMALIZED_BOX_HEIGHT)
-                return FITTER.offsetHeight > NORMALIZED_BOX_HEIGHT
-            }
 
         CHILDREN.forEach(child => {
             if (!child.dataset.size) child.dataset.size = getComputedStyle(child).fontSize
         })
 
-        function update_font_size(child, adder) {
-            return child.style.fontSize = `${parseFloat(getComputedStyle(child).fontSize) + (adder)}px`
+        const execCore = () => {
+            let still_wideable = true
+
+            while (overflowing() < stagger * 1.5 && overflowing() !== 0 && still_wideable)
+                CHILDREN.forEach(child => {
+                    if (wideable || parseFloat(child.style.fontSize) + stagger < parseFloat(child.dataset.size)) {
+                        update_font_size(child)
+                        still_wideable = true
+                    } else {
+                        child.style.removeProperty('font-size')
+                        still_wideable = false
+                    }
+                })
+
+            while (overflowing() > stagger * 1.5)
+                CHILDREN.forEach(child => update_font_size(child, true))
         }
 
-        let max_wide = false
-        while (!overflowing() && !max_wide) {
-            CHILDREN.forEach(child => {
-                wideable || parseFloat(child.style.fontSize) + stagger < parseFloat(child.dataset.size)
-                    ? (update_font_size(child, stagger), max_wide = false)
-                    : (child.style.removeProperty('font-size'), max_wide = true)
-            })
-        }
-
-        while (overflowing())
-            CHILDREN.forEach(child => update_font_size(child, -stagger))
-
-        FITTER.style.removeProperty('display')
+        execCore()
+        window.addEventListener('resize', execCore)
     })
 }
