@@ -130,7 +130,7 @@ Good to know : Fitext is a very lightweight module : **Less than 1 kB** !
             </td>
             <td align="center" width="140">
                 <a href=https://www.instagram.com/jape_photography/">
-                    <img src="https://scontent-cdg2-1.cdninstagram.com/v/t51.2885-19/s150x150/87216381_788522074974374_7740995681304707072_n.jpg?_nc_ht=scontent-cdg2-1.cdninstagram.com&_nc_ohc=skjsIYhclVgAX9ewtZk&oh=17baa04f8587b0089e9b2e22ef0624e1&oe=5ED93384" alt="Jape Photography" width="100px;" />
+                    <img src="https://avatars2.githubusercontent.com/u/66625792?s=460&v=4" alt="Jape Photography" width="100px;" />
                     <br/>
                     <sub><strong>Jape</strong></sub>
                 </a><br>
@@ -138,7 +138,7 @@ Good to know : Fitext is a very lightweight module : **Less than 1 kB** !
             </td>
             <td align="center" width="140">
                 <a href="https://github.com/mathieudaix">
-                    <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/95019821_1336186823257776_6091369584101687296_n.jpg?_nc_cat=109&_nc_sid=b96e70&_nc_ohc=vzl7zKAyKi0AX9JY36K&_nc_ad=z-m&_nc_cid=0&_nc_zor=9&_nc_ht=scontent.xx&oh=c0b399312a81efd43099d87ea03d8b37&oe=5ECFC9AF" alt="Mathieu Daix" width="100px;" />
+                    <img src="https://avatars0.githubusercontent.com/u/49030237?s=460&u=2320dfb42b97df7de7b4767598b285264bf6f6be&v=4" alt="Mathieu Daix" width="100px;" />
                     <br/>
                     <sub><strong>Mathieu Daix</strong></sub>
                 </a><br>
