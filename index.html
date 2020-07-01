@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>fitext Module Example</title>
-    <link rel="shortcut icon" href="./img/fitext_favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -68,35 +68,27 @@
     </div>
 
 
-    <script src="./fitext.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fitext@latest/dist/fitext.umd.js"></script>
     <script>
 
-        ['DOMContentLoaded', 'resize'].forEach( event => window.addEventListener( event, adjustHeight ) )
-
-        function adjustHeight() {
-            const
-                ELEMENTS = document.getElementsByClassName( 'fit-this-text' ),
-                IS_WIDEABLE = true
-
-            fit( ELEMENTS, IS_WIDEABLE )
-        }
+        ['DOMContentLoaded', 'resize'].forEach(e => window.addEventListener(e, () => fitext(true)))
 
 
         //** FOLLOWING CODE IS DEDICATED TO THE DEMO **//
 
-        window.addEventListener( 'DOMContentLoaded', demo )
+        window.addEventListener('DOMContentLoaded', demo)
 
         function demo() {
 
             const
-                WIDTH = document.getElementById( 'width' ),
-                HEIGHT = document.getElementById( 'height' ),
-                HANDLEABLE = document.querySelector( '.fit-this-text' ),
-                RESET = document.getElementById( 'reset' ),
+                WIDTH = document.getElementById('width'),
+                HEIGHT = document.getElementById('height'),
+                HANDLEABLE = document.querySelector('.fit-this-text'),
+                RESET = document.getElementById('reset'),
                 INITIAL_VALUES = [WIDTH.value, HEIGHT.value],
-                WIDEABLE = document.getElementById( 'wideable' ),
-                WIDTH_OUTPUT = document.getElementById( 'widthVal' ),
-                HEIGHT_OUTPUT = document.getElementById( 'heightVal' )
+                WIDEABLE = document.getElementById('wideable'),
+                WIDTH_OUTPUT = document.getElementById('widthVal'),
+                HEIGHT_OUTPUT = document.getElementById('heightVal')
 
             WIDTH.oninput = handleWidth
             HEIGHT.oninput = handleHeight
@@ -106,12 +98,12 @@
 
             function handleWidth() {
                 WIDTH_OUTPUT.value = HANDLEABLE.style.width = `${this.value}%`
-                fit( [HANDLEABLE], WIDEABLE.checked )
+                fitext(WIDEABLE.checked)
             }
 
             function handleHeight() {
                 HEIGHT_OUTPUT.value = HANDLEABLE.style.height = `${this.value}%`
-                fit( [HANDLEABLE], WIDEABLE.checked )
+                fitext(WIDEABLE.checked)
             }
 
             function reset() {
@@ -119,11 +111,11 @@
                 HEIGHT_OUTPUT.value = HANDLEABLE.style.height = `${INITIAL_VALUES[1]}%`
                 WIDTH.value = INITIAL_VALUES[0]
                 HEIGHT.value = INITIAL_VALUES[1]
-                fit( [HANDLEABLE], WIDEABLE.checked )
+                fitext(WIDEABLE.checked)
             }
 
             function handleWideable() {
-                fit( [HANDLEABLE], WIDEABLE.checked )
+                fitext(WIDEABLE.checked)
             }
         }
 
