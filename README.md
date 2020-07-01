@@ -48,7 +48,7 @@ fitext(true);
 
 **No-module :**
 ```html
-<script src='dist/fitext.min.js' defer></script>
+<script src='src/fitext.js' defer></script>
 <script>
     window.addEventListener('DOMContentLoaded', function() {
         fitext(true);
