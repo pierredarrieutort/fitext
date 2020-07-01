@@ -48,7 +48,7 @@ fitext(true);
 
 **No-module :**
 ```html
-<script src='src/fitext.js' defer></script>
+<script src='https://cdn.jsdelivr.net/npm/fitext@latest/dist/fitext.umd.js'></script>
 <script>
     window.addEventListener('DOMContentLoaded', function() {
         fitext(true);
