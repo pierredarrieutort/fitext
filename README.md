@@ -9,6 +9,7 @@ Fitext is a module which adapts the textual elements so that they are always con
         <source src="FitextCanDoThis.mp4" type="video/mp4">
     </video>
 </div>
+
 ## Table of contents
 
 1. [Installation](#installation)
