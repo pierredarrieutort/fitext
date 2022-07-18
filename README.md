@@ -4,9 +4,8 @@ Fitext is a module which adapts the textual elements so that they are always con
 
 <div align="center">
     <img src="./src/img/fitext_logo.jpg" alt="Logo fitext">
+    <video loop autoplay src="FitextCanDoThis.mp4" width=500/>
 </div>
-
-FitextCanDoThis.mp4
 
 ## Table of contents
 
